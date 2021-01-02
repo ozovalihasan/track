@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> renders correctly 1`] = `
+<div
+  className="sc-bdfBwQ Engni"
+>
+  There is an error
+  .
+   
+  Please try again.
+</div>
+`;
