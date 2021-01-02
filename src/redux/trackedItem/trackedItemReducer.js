@@ -22,7 +22,7 @@ const trackedItemSlice = createSlice({
 
     addAllTrackedItem: (state, { payload }) => {
       state.loading = false;
-      state.trackedItems = payload
+      state.trackedItems = payload;
       state.error = '';
     },
 
@@ -33,8 +33,8 @@ const trackedItemSlice = createSlice({
 const { actions, reducer } = trackedItemSlice;
 
 export const {
-  trackedItemsRequest,
-  trackedItemsFailure,
+  trackedItemRequest,
+  trackedItemFailure,
   addAllTrackedItem,
 } = actions;
 
@@ -58,6 +58,5 @@ export const fetchTrackedItemList = () => dispatch => {
   const urlAPI = `${REACT_APP_SERVER_URL}/trackedItems`;
   axiosBlock(urlAPI, addAllTrackedItem, dispatch);
 };
-
 
 export default reducer;

@@ -22,7 +22,7 @@ const pieceSlice = createSlice({
 
     addAllPieces: (state, { payload }) => {
       state.loading = false;
-      state.pieces = payload
+      state.pieces = payload;
       state.error = '';
     },
 
@@ -33,8 +33,8 @@ const pieceSlice = createSlice({
 const { actions, reducer } = pieceSlice;
 
 export const {
-  piecesRequest,
-  piecesFailure,
+  pieceRequest,
+  pieceFailure,
   addAllPieces,
 } = actions;
 
@@ -58,6 +58,5 @@ export const fetchPiecesList = () => dispatch => {
   const urlAPI = `${REACT_APP_SERVER_URL}/pieces`;
   axiosBlock(urlAPI, addAllPieces, dispatch);
 };
-
 
 export default reducer;

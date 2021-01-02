@@ -22,7 +22,7 @@ const userSlice = createSlice({
 
     addAllUser: (state, { payload }) => {
       state.loading = false;
-      state.users = payload
+      state.users = payload;
       state.error = '';
     },
 
@@ -33,8 +33,8 @@ const userSlice = createSlice({
 const { actions, reducer } = userSlice;
 
 export const {
-  usersRequest,
-  usersFailure,
+  userRequest,
+  userFailure,
   addAllUser,
 } = actions;
 
@@ -58,6 +58,5 @@ export const fetchUserList = () => dispatch => {
   const urlAPI = `${REACT_APP_SERVER_URL}/users`;
   axiosBlock(urlAPI, addAllUser, dispatch);
 };
-
 
 export default reducer;
