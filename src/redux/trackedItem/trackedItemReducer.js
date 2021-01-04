@@ -1,29 +1,38 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { axiosBlock } from '../api/apiReducer';
+// import axios from 'axios';
 
 const trackedItemSlice = createSlice({
   name: 'trackedItem',
   initialState: {
-    loading: false,
-    trackedItems: [],
-    error: '',
+    list: [],
+    chosen: { trackedItem: {}, pieces: [] },
   },
   reducers: {
 
-    trackedItemRequest: state => {
-      state.loading = true;
+    listTrackedItems: (state, { payload }) => {
+      state.list = payload;
     },
 
-    trackedItemFailure: (state, { payload }) => {
-      state.loading = false;
-      state.error = payload;
+    showTrackedItem: (state, { payload }) => {
+      state.chosen.trackedItem = payload.tracked_item;
+      state.chosen.pieces = payload.pieces;
     },
 
-    addAllTrackedItem: (state, { payload }) => {
-      state.loading = false;
-      state.trackedItems = payload;
-      state.error = '';
+    createTrackedItem: (state, { payload }) => {
+      state.list.push(payload);
+    },
+
+    updateTrackedItem: (state, { payload }) => {
+      const index = state.list.findIndex(trackedItem => trackedItem.id === payload.id);
+      state.list[index] = payload;
+    },
+
+    destroyTrackedItem: state => {
+      const index = state.list.findIndex(trackedItem => trackedItem.id === state.chosen.id);
+      if (index !== -1) state.list.splice(index, 1);
+      state.chosen = {};
     },
 
   },
@@ -33,30 +42,36 @@ const trackedItemSlice = createSlice({
 const { actions, reducer } = trackedItemSlice;
 
 export const {
-  trackedItemRequest,
-  trackedItemFailure,
-  addAllTrackedItem,
+  listTrackedItems,
+  showTrackedItem,
+  createTrackedItem,
+  updateTrackedItem,
+  destroyTrackedItem,
 } = actions;
 
-export const axiosBlock = (urlAPI, usedDispatch, dispatch) => {
-  dispatch(trackedItemRequest());
-  axios(urlAPI)
-    .then(response => {
-      if (response.status.toString()[0] !== '2') {
-        throw response.status;
-      }
-      dispatch(usedDispatch(response.data));
-    })
-    .catch(error => {
-      dispatch(trackedItemFailure(error));
-    });
+export const fetchListTrackedItems = () => dispatch => {
+  const urlAPI = '/tracked_items';
+  axiosBlock(urlAPI, listTrackedItems, dispatch);
 };
 
-const REACT_APP_SERVER_URL = 'http://127.0.0.1:3000';
+export const fetchShowTrackedItem = trackedItemId => dispatch => {
+  const urlAPI = `/tracked_items/${trackedItemId}`;
+  axiosBlock(urlAPI, showTrackedItem, dispatch);
+};
 
-export const fetchTrackedItemList = () => dispatch => {
-  const urlAPI = `${REACT_APP_SERVER_URL}/trackedItems`;
-  axiosBlock(urlAPI, addAllTrackedItem, dispatch);
+export const fetchCreateTrackedItem = data => dispatch => {
+  const urlAPI = '/tracked_items/';
+  axiosBlock(urlAPI, createTrackedItem, dispatch, true, 'post', data);
+};
+
+export const fetchUpdateTrackedItem = (trackedItemId, data) => dispatch => {
+  const urlAPI = `/tracked_items/${trackedItemId}`;
+  axiosBlock(urlAPI, updateTrackedItem, dispatch, true, 'patch', data);
+};
+
+export const fetchDestroyTrackedItem = trackedItemId => dispatch => {
+  const urlAPI = `/tracked_items/${trackedItemId}`;
+  axiosBlock(urlAPI, destroyTrackedItem, dispatch, true, 'delete');
 };
 
 export default reducer;

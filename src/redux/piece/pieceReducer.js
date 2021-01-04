@@ -1,29 +1,38 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { axiosBlock } from '../api/apiReducer';
+// import axios from 'axios';
 
 const pieceSlice = createSlice({
   name: 'piece',
   initialState: {
-    loading: false,
-    pieces: [],
-    error: '',
+    list: [],
+    chosen: { piece: {}, takenTimes: [] },
   },
   reducers: {
 
-    pieceRequest: state => {
-      state.loading = true;
+    listPieces: (state, { payload }) => {
+      state.list = payload;
     },
 
-    pieceFailure: (state, { payload }) => {
-      state.loading = false;
-      state.error = payload;
+    showPiece: (state, { payload }) => {
+      state.chosen.piece = payload.piece;
+      state.chosen.takenTimes = payload.taken_times;
     },
 
-    addAllPieces: (state, { payload }) => {
-      state.loading = false;
-      state.pieces = payload;
-      state.error = '';
+    createPiece: (state, { payload }) => {
+      state.list.push(payload);
+    },
+
+    updatePiece: (state, { payload }) => {
+      const index = state.list.findIndex(piece => piece.id === payload.id);
+      state.list[index] = payload;
+    },
+
+    destroyPiece: state => {
+      const index = state.list.findIndex(piece => piece.id === state.chosen.id);
+      if (index !== -1) state.list.splice(index, 1);
+      state.chosen = {};
     },
 
   },
@@ -33,30 +42,36 @@ const pieceSlice = createSlice({
 const { actions, reducer } = pieceSlice;
 
 export const {
-  pieceRequest,
-  pieceFailure,
-  addAllPieces,
+  listPieces,
+  showPiece,
+  createPiece,
+  updatePiece,
+  destroyPiece,
 } = actions;
 
-export const axiosBlock = (urlAPI, usedDispatch, dispatch) => {
-  dispatch(pieceRequest());
-  axios(urlAPI)
-    .then(response => {
-      if (response.status.toString()[0] !== '2') {
-        throw response.status;
-      }
-      dispatch(usedDispatch(response.data));
-    })
-    .catch(error => {
-      dispatch(pieceFailure(error));
-    });
+export const fetchListPieces = () => dispatch => {
+  const urlAPI = '/pieces';
+  axiosBlock(urlAPI, listPieces, dispatch);
 };
 
-const REACT_APP_SERVER_URL = 'http://127.0.0.1:3000';
+export const fetchShowPiece = pieceId => dispatch => {
+  const urlAPI = `/pieces/${pieceId}`;
+  axiosBlock(urlAPI, showPiece, dispatch);
+};
 
-export const fetchPiecesList = () => dispatch => {
-  const urlAPI = `${REACT_APP_SERVER_URL}/pieces`;
-  axiosBlock(urlAPI, addAllPieces, dispatch);
+export const fetchCreatePiece = data => dispatch => {
+  const urlAPI = '/pieces/';
+  axiosBlock(urlAPI, createPiece, dispatch, true, 'post', data);
+};
+
+export const fetchUpdatePiece = (pieceId, data) => dispatch => {
+  const urlAPI = `/pieces/${pieceId}`;
+  axiosBlock(urlAPI, updatePiece, dispatch, true, 'patch', data);
+};
+
+export const fetchDestroyPiece = pieceId => dispatch => {
+  const urlAPI = `/pieces/${pieceId}`;
+  axiosBlock(urlAPI, destroyPiece, dispatch, true, 'delete');
 };
 
 export default reducer;

@@ -1,29 +1,25 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { axiosBlock } from '../api/apiReducer';
+// import axios from 'axios';
 
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    loading: false,
-    users: [],
-    error: '',
+    user: '',
   },
   reducers: {
 
-    userRequest: state => {
-      state.loading = true;
+    addUser: (state, { payload }) => {
+      state.user = payload.user.username;
     },
 
-    userFailure: (state, { payload }) => {
-      state.loading = false;
-      state.error = payload;
+    addUserAutoLogin: (state, { payload }) => {
+      state.user = payload.username;
     },
 
-    addAllUser: (state, { payload }) => {
-      state.loading = false;
-      state.users = payload;
-      state.error = '';
+    userSignOut: state => {
+      state.user = '';
     },
 
   },
@@ -33,30 +29,26 @@ const userSlice = createSlice({
 const { actions, reducer } = userSlice;
 
 export const {
-  userRequest,
-  userFailure,
-  addAllUser,
+  addUser,
+  addUserAutoLogin,
+  userSignOut,
 } = actions;
 
-export const axiosBlock = (urlAPI, usedDispatch, dispatch) => {
-  dispatch(userRequest());
-  axios(urlAPI)
-    .then(response => {
-      if (response.status.toString()[0] !== '2') {
-        throw response.status;
-      }
-      dispatch(usedDispatch(response.data));
-    })
-    .catch(error => {
-      dispatch(userFailure(error));
-    });
+export const fetchUserCreate = (username, password) => dispatch => {
+  const pathAPI = '/users';
+  const data = { username, password };
+  axiosBlock(pathAPI, addUser, dispatch, false, 'post', data);
 };
 
-const REACT_APP_SERVER_URL = 'http://127.0.0.1:3000';
+export const fetchUserLogin = (username, password) => dispatch => {
+  const pathAPI = '/login';
+  const data = { username, password };
+  axiosBlock(pathAPI, addUser, dispatch, false, 'post', data);
+};
 
-export const fetchUserList = () => dispatch => {
-  const urlAPI = `${REACT_APP_SERVER_URL}/users`;
-  axiosBlock(urlAPI, addAllUser, dispatch);
+export const fetchUserAutoLogin = () => dispatch => {
+  const pathAPI = '/auto_login';
+  axiosBlock(pathAPI, addUserAutoLogin, dispatch);
 };
 
 export default reducer;
