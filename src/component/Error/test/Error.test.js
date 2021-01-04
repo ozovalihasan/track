@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
 
-import Error from './Error';
+import Error from '../Error';
 
 const error = 'There is an error';
 
