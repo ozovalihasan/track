@@ -15,6 +15,11 @@ const ShortTrackedItem = ({
 
 const Main = styled.div`
   background-color: red;
+  width: 200px;
+  align-self: center;
+  text-align: center;
+  border: yellow 2px solid;
+  margin: 20px;
 `;
 
 ShortTrackedItem.propTypes = {
