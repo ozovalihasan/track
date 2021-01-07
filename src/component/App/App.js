@@ -16,6 +16,7 @@ import ListTakenTimesContainer from '../ListTakenTimes/ListTakenTimesContainer';
 import AddCheck from '../AddCheck/AddCheck';
 import PieceFormContainer from '../PieceForm/PieceFormContainer';
 import ToggleShowHideContainer from '../ToggleShowHide/ToggleShowHideContainer';
+import YourProgressContainer from '../YourProgress/YourProgressContainer';
 // import Header from '../component/Header';
 
 const App = ({ showList }) => (
@@ -25,23 +26,18 @@ const App = ({ showList }) => (
       <ErrorContainer />
       <LoadingContainer />
 
-      {/* <ToggleShowHideContainer> */}
-      {/* <ShowButton type="button" onClick={handleClick}>
-        Show
-      </ShowButton> */}
-      {/* {showList && (<ListTrackedItemsContainer ref={node} />)} */}
       <ToggleShowHideContainer>
         {showList && (
         <ListTrackedItemsContainer />
         )}
       </ToggleShowHideContainer>
 
-      {/* </ToggleShowHideContainer> */}
       <Switch>
         {/* <Route exact path="/" component={ListTrackedItemsContainer} /> */}
         <Route exact path="/one-tracked-item/:id" component={OneTrackedItemContainer} />
         <Route exact path="/one-piece/:id" component={OnePieceContainer} />
         <Route exact path="/one-piece-create" component={PieceFormContainer} />
+        <Route exact path="/your-progress" component={YourProgressContainer} />
         <Route
           exact
           path="/"
