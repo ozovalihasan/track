@@ -23,16 +23,22 @@ const apiSlice = createSlice({
       state.error = payload;
     },
 
+    resetApi: state => {
+      state.loading = false;
+      state.error = '';
+    },
+
   },
 
 });
 
 const { actions, reducer } = apiSlice;
 
-const {
+export const {
   apiRequest,
   apiSuccess,
   apiFailure,
+  resetApi,
 } = actions;
 
 const JWT_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5fQ.ZTvJB-ze30pdpLpxPg86I6oU4_ybpEPfMLndUflpYoE';

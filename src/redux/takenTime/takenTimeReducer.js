@@ -28,6 +28,10 @@ const takenTimeSlice = createSlice({
       state.deleteId = payload;
     },
 
+    resetTakenTime: state => {
+      state.list = [];
+      state.deleteId = '';
+    },
   },
 
 });
@@ -39,6 +43,7 @@ export const {
   createTakenTime,
   destroyTakenTime,
   destroyTakenTimeId,
+  resetTakenTime,
 } = actions;
 
 export const fetchListTakenTimes = () => dispatch => {

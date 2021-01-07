@@ -14,6 +14,10 @@ const appSlice = createSlice({
     hideTrackedItems: state => {
       state.showList = false;
     },
+
+    resetApp: state => {
+      state.showList = false;
+    },
   },
 
 });
@@ -23,6 +27,7 @@ const { actions, reducer } = appSlice;
 export const {
   showTrackedItems,
   hideTrackedItems,
+  resetApp,
 } = actions;
 
 export default reducer;

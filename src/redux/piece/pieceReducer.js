@@ -35,6 +35,10 @@ const pieceSlice = createSlice({
       state.chosen = {};
     },
 
+    resetPiece: state => {
+      state.list = [];
+      state.chosen = { piece: {}, takenTimes: [] };
+    },
   },
 
 });
@@ -47,6 +51,7 @@ export const {
   createPiece,
   updatePiece,
   destroyPiece,
+  resetPiece,
 } = actions;
 
 export const fetchListPieces = () => dispatch => {
