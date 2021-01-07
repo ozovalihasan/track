@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
 import styled from 'styled-components';
 import { uuid } from 'uuidv4';
-import { secondColor, thirdColor, fourthColor } from '../styleVariables';
+import { thirdColor, fourthColor } from '../styleVariables';
 
 const YourProgress = ({ pieces }) => {
   const data = percent => ({
@@ -42,29 +42,39 @@ const YourProgress = ({ pieces }) => {
     cutoutPercentage: 90,
   };
 
+  const titleDay = ['Today', 'Yesterday', 'Previous Day'];
+  const titleWeek = ['This Week', 'Last Week', 'Previous Week'];
+
   return (
-    <div>
+    <Main>
 
       {pieces.map(piece => (
-        <OnePiece key={piece.id}>
+        <OnePieceContainer key={piece.id}>
           <div>
             {piece.name}
           </div>
-          {piece.percentageTakenTimes.map(
-            percentage => (
-              <DoughnutContainer key={uuid()}>
-                <Doughnut
-                  data={data(percentage)}
-                  options={options}
-                  width="20"
-                  height="20"
-                />
-              </DoughnutContainer>
-            ),
-          )}
-        </OnePiece>
+          <OnePiece>
+
+            {piece.percentageTakenTimes.map(
+              (percentage, index) => (
+                <div key={uuid()}>
+
+                  {piece.frequency_time === 86400 ? titleDay[index] : titleWeek[index] }
+                  <DoughnutContainer>
+                    <Doughnut
+                      data={data(percentage)}
+                      options={options}
+                    />
+                  </DoughnutContainer>
+                </div>
+
+              ),
+            )}
+          </OnePiece>
+
+        </OnePieceContainer>
       ))}
-    </div>
+    </Main>
   );
 };
 
@@ -72,16 +82,27 @@ YourProgress.propTypes = {
   pieces: PropTypes.arrayOf().isRequired,
 };
 
-const OnePiece = styled.div`
-width: 100%;
-display: flex;
+const Main = styled.div`
+overflow: scroll;
 `;
+
+const OnePieceContainer = styled.div`
+width: 100%;
+// display: flex;
+overflow: scroll;
+
+`;
+
+const OnePiece = styled.div`
+  display: flex;
+`;
+
 const DoughnutContainer = styled.div`
 margin: 10px;
 padding: 10px;
 width: 100%;
 display: flex;
-background-color: ${secondColor};
 `;
+// background-color: ${secondColor};
 
 export default YourProgress;
