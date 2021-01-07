@@ -15,7 +15,7 @@ const Menu = () => (
       </Link>
     </OneLink>
     <OneLink>
-      <Link to="/">
+      <Link to="/your-progress">
         Your Progress
       </Link>
     </OneLink>
