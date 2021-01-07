@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ShortTrackedItem from '../ShortTrackedItem/ShortTrackedItem';
+import ShortPiece from './ShortPiece';
 
 const ShortPieceContainer = ({ piece }) => (
-  <ShortTrackedItem piece={piece} />
+  <ShortPiece piece={piece} />
 );
 
 ShortPieceContainer.propTypes = {

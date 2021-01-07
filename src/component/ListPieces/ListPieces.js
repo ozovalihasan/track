@@ -1,26 +1,23 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import ShortTrackedItemContainer from '../../container/ShortTrackedItemContainer';
+
+// import ShortPieceContainer from '../ShortPiece/ShortPieceContainer';
 
 const ListPieces = ({
-  pieces,
+  children, pieces,
 }) => (
-  <Main>
+  <>
     {
-    pieces.map(piece => (
-      <ShortTrackedItemContainer key={piece.id} piece={piece} />
-    ))
-  }
+      pieces.map(piece => React.cloneElement(children, { key: piece.id, piece }))
+    }
 
-  </Main>
+  </>
 );
 
-const Main = styled.div`
-              background-color: blue;
-
-`;
+// height: 100vh;
 
 ListPieces.propTypes = {
+  children: PropTypes.element.isRequired,
   pieces: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
