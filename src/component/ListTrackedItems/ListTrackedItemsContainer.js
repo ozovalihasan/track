@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCreateTrackedItem, fetchListTrackedItems, fetchShowTrackedItem } from '../../redux';
+import {
+  fetchCreateTrackedItem,
+  fetchListTrackedItems,
+  fetchShowTrackedItem,
+  hideTrackedItems,
+  showAllTrackedItems,
+} from '../../redux';
 
 import ListTrackedItems from './ListTrackedItems';
 
@@ -18,8 +24,14 @@ const ListTrackedItemsContainer = () => {
     dispatch(fetchCreateTrackedItem({ name }));
   };
 
+  const handleClickShowAll = () => {
+    dispatch(showAllTrackedItems());
+    dispatch(hideTrackedItems());
+  };
+
   const handleClickChoose = trackedItemId => {
     dispatch(fetchShowTrackedItem(trackedItemId));
+    dispatch(hideTrackedItems());
   };
 
   const handleChange = e => {
@@ -32,6 +44,7 @@ const ListTrackedItemsContainer = () => {
       handleClick={handleClick}
       handleChange={handleChange}
       handleClickChoose={handleClickChoose}
+      handleClickShowAll={handleClickShowAll}
       name={name}
     />
   );

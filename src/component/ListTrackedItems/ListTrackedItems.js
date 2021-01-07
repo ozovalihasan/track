@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // import ShortTrackedItemContainer from '../ShortTrackedItem/ShortTrackedItemContainer';
 
 const ListTrackedItems = ({
-  trackedItems, handleClick, name, handleChange, handleClickChoose,
+  trackedItems, handleClick, name, handleChange, handleClickChoose, handleClickShowAll,
 }) => (
   <Main>
     <TrackedItem>
@@ -11,6 +11,9 @@ const ListTrackedItems = ({
         <input type="text" value={name} onChange={handleChange} placeholder="Tracked Item Name" />
         <CreateButton onClick={handleClick}>
           Create
+        </CreateButton>
+        <CreateButton onClick={handleClickShowAll}>
+          Show All
         </CreateButton>
       </CreateContainer>
     </TrackedItem>
@@ -40,7 +43,7 @@ width: 100%;
 
 const CreateContainer = styled.div`
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
   height: 100%;
 `;
 
@@ -57,7 +60,6 @@ align-self: center;
 justify-self: center;
 text-align: center;
 border: yellow 2px solid;
-// margin: 20px;marginmarginmarginmargin
 `;
 
 const ChooseButton = styled.button`
@@ -69,7 +71,9 @@ ListTrackedItems.propTypes = {
   handleClick: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleClickChoose: PropTypes.func.isRequired,
+  handleClickShowAll: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
+
 };
 
 export default ListTrackedItems;

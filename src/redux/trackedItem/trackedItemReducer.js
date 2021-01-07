@@ -35,6 +35,15 @@ const trackedItemSlice = createSlice({
       state.chosen = {};
     },
 
+    showAllTrackedItems: state => {
+      state.chosen = { trackedItem: {}, pieces: [] };
+    },
+
+    resetTrackedItem: state => {
+      state.list = [];
+      state.chosen = { trackedItem: {}, pieces: [] };
+    },
+
   },
 
 });
@@ -47,6 +56,8 @@ export const {
   createTrackedItem,
   updateTrackedItem,
   destroyTrackedItem,
+  showAllTrackedItems,
+  resetTrackedItem,
 } = actions;
 
 export const fetchListTrackedItems = () => dispatch => {
