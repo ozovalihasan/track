@@ -10,8 +10,14 @@ const userSlice = createSlice({
   },
   reducers: {
 
-    addUser: (state, { payload }) => {
-      state.user = payload.user.username;
+    addUser: {
+      reducer: (state, { payload }) => {
+        state.user = payload.user.username;
+      },
+      prepare: response => {
+        localStorage.token = response.token;
+        return { payload: response };
+      },
     },
 
     addUserAutoLogin: (state, { payload }) => {
