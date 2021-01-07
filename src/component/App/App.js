@@ -17,6 +17,7 @@ import AddCheck from '../AddCheck/AddCheck';
 import PieceFormContainer from '../PieceForm/PieceFormContainer';
 import ToggleShowHideContainer from '../ToggleShowHide/ToggleShowHideContainer';
 import YourProgressContainer from '../YourProgress/YourProgressContainer';
+import ProfileContainer from '../Profile/ProfileContainer';
 // import Header from '../component/Header';
 
 const App = ({ showList }) => (
@@ -38,11 +39,8 @@ const App = ({ showList }) => (
         <Route exact path="/one-piece/:id" component={OnePieceContainer} />
         <Route exact path="/one-piece-create" component={PieceFormContainer} />
         <Route exact path="/your-progress" component={YourProgressContainer} />
-        <Route
-          exact
-          path="/"
-          component={AddCheck}
-        />
+        <Route exact path="/profile" component={ProfileContainer} />
+        <Route exact path="/" component={AddCheck} />
         <Route
           exact
           path="/list-taken-times"

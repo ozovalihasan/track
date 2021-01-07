@@ -20,7 +20,7 @@ const Menu = () => (
       </Link>
     </OneLink>
     <OneLink>
-      <Link to="/">
+      <Link to="/profile">
         More
       </Link>
     </OneLink>
