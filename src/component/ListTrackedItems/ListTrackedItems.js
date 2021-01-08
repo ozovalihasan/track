@@ -3,13 +3,19 @@ import styled from 'styled-components';
 // import ShortTrackedItemContainer from '../ShortTrackedItem/ShortTrackedItemContainer';
 
 const ListTrackedItems = ({
-  trackedItems, handleClick, name, handleChange, handleClickChoose, handleClickShowAll,
+  trackedItems,
+  handleClickCreateTrackedItem,
+  name,
+  handleChange,
+  handleClickChoose,
+  handleClickShowAll,
+  handleClickDeleteTrackedItem,
 }) => (
   <Main>
     <TrackedItem>
       <CreateContainer>
         <input type="text" value={name} onChange={handleChange} placeholder="Tracked Item Name" />
-        <CreateButton onClick={handleClick}>
+        <CreateButton onClick={handleClickCreateTrackedItem}>
           Create
         </CreateButton>
         <CreateButton onClick={handleClickShowAll}>
@@ -20,13 +26,19 @@ const ListTrackedItems = ({
     {
     trackedItems.map(trackedItem => (
       // <ShortTrackedItemContainer key={trackedItem.id} trackedItem={trackedItem} />
-      <ChooseButton key={trackedItem.id} onClick={() => handleClickChoose(trackedItem.id)}>
-        <TrackedItem key={trackedItem.id}>
-          {trackedItem.name}
-        </TrackedItem>
-      </ChooseButton>
+      <TrackedItemContainer key={trackedItem.id}>
+        <ChooseButton onClick={() => handleClickChoose(trackedItem.id)}>
+          <TrackedItem>
+            {trackedItem.name}
+
+          </TrackedItem>
+        </ChooseButton>
+        <DeleteButton onClick={() => handleClickDeleteTrackedItem(trackedItem.id)}>
+          Cancel
+        </DeleteButton>
+      </TrackedItemContainer>
     ))
-  }
+}
 
   </Main>
 );
@@ -38,6 +50,13 @@ height: 500px;
 overflow: scroll;
 position: absolute;
 width: 100%;
+
+`;
+
+const TrackedItemContainer = styled.div`
+      background-color: orange;
+      display: grid;
+      grid-template-rows: 4fr 1fr;
 
 `;
 
@@ -62,16 +81,21 @@ text-align: center;
 border: yellow 2px solid;
 `;
 
+const DeleteButton = styled.button`
+background-color: yellow;
+`;
+
 const ChooseButton = styled.button`
   background-color: pink;
 `;
 
 ListTrackedItems.propTypes = {
   trackedItems: PropTypes.arrayOf(PropTypes.object).isRequired,
-  handleClick: PropTypes.func.isRequired,
+  handleClickCreateTrackedItem: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleClickChoose: PropTypes.func.isRequired,
   handleClickShowAll: PropTypes.func.isRequired,
+  handleClickDeleteTrackedItem: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
 
 };
