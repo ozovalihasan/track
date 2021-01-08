@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import ShortTakenTime from './ShortTakenTime';
 import { fetchDestroyTakenTime } from '../../redux';
+import ShortTakenTime from './ShortTakenTime';
 
 const ShortTakenTimeContainer = ({ takenTime }) => {
   const dispatch = useDispatch();
