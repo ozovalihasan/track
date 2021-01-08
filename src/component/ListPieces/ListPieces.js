@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import ShortPieceContainer from '../ShortPiece/ShortPieceContainer';
-
 const ListPieces = ({
   children, pieces,
 }) => (
@@ -13,8 +11,6 @@ const ListPieces = ({
 
   </>
 );
-
-// height: 100vh;
 
 ListPieces.propTypes = {
   children: PropTypes.element.isRequired,

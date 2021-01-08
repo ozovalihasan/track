@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import ShortTrackedItemContainer from '../ShortTrackedItem/ShortTrackedItemContainer';
 
 const ListTrackedItems = ({
   trackedItems,
@@ -25,7 +24,6 @@ const ListTrackedItems = ({
     </TrackedItem>
     {
     trackedItems.map(trackedItem => (
-      // <ShortTrackedItemContainer key={trackedItem.id} trackedItem={trackedItem} />
       <TrackedItemContainer key={trackedItem.id}>
         <ChooseButton onClick={() => handleClickChoose(trackedItem.id)}>
           <TrackedItem>
