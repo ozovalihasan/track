@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchCreateTrackedItem,
-  fetchDestroyTrackedItem,
   fetchListTrackedItems,
-  fetchShowTrackedItem,
   hideTrackedItems,
   showAllTrackedItems,
 } from '../../redux';
@@ -31,16 +29,6 @@ const ListTrackedItemsContainer = () => {
     dispatch(hideTrackedItems());
   };
 
-  const handleClickChoose = trackedItemId => {
-    dispatch(fetchShowTrackedItem(trackedItemId));
-    dispatch(hideTrackedItems());
-  };
-
-  const handleClickDeleteTrackedItem = trackedItemId => {
-    dispatch(fetchDestroyTrackedItem(trackedItemId));
-    dispatch(hideTrackedItems());
-  };
-
   const handleChange = e => {
     setName(e.target.value);
   };
@@ -50,9 +38,7 @@ const ListTrackedItemsContainer = () => {
       trackedItems={trackedItems}
       handleClickCreateTrackedItem={handleClickCreateTrackedItem}
       handleChange={handleChange}
-      handleClickChoose={handleClickChoose}
       handleClickShowAll={handleClickShowAll}
-      handleClickDeleteTrackedItem={handleClickDeleteTrackedItem}
       name={name}
     />
   );

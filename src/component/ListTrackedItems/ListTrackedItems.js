@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import ShortTrackedItemsContainer from '../ShortTrackedItems/ShortTrackedItemContainer';
 
 const ListTrackedItems = ({
   trackedItems,
   handleClickCreateTrackedItem,
   name,
   handleChange,
-  handleClickChoose,
   handleClickShowAll,
-  handleClickDeleteTrackedItem,
 }) => (
   <Main>
     <TrackedItem>
@@ -24,17 +23,7 @@ const ListTrackedItems = ({
     </TrackedItem>
     {
     trackedItems.map(trackedItem => (
-      <TrackedItemContainer key={trackedItem.id}>
-        <ChooseButton onClick={() => handleClickChoose(trackedItem.id)}>
-          <TrackedItem>
-            {trackedItem.name}
-
-          </TrackedItem>
-        </ChooseButton>
-        <DeleteButton onClick={() => handleClickDeleteTrackedItem(trackedItem.id)}>
-          Cancel
-        </DeleteButton>
-      </TrackedItemContainer>
+      <ShortTrackedItemsContainer key={trackedItem.id} trackedItem={trackedItem} />
     ))
 }
 
@@ -48,13 +37,6 @@ height: 500px;
 overflow: scroll;
 position: absolute;
 width: 100%;
-
-`;
-
-const TrackedItemContainer = styled.div`
-      background-color: orange;
-      display: grid;
-      grid-template-rows: 4fr 1fr;
 
 `;
 
@@ -79,21 +61,11 @@ text-align: center;
 border: yellow 2px solid;
 `;
 
-const DeleteButton = styled.button`
-background-color: yellow;
-`;
-
-const ChooseButton = styled.button`
-  background-color: pink;
-`;
-
 ListTrackedItems.propTypes = {
   trackedItems: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleClickCreateTrackedItem: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
-  handleClickChoose: PropTypes.func.isRequired,
   handleClickShowAll: PropTypes.func.isRequired,
-  handleClickDeleteTrackedItem: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
 
 };
