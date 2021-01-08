@@ -1,28 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Menu = () => (
   <Main>
     <OneLink>
-      <Link to="/">
+      <StyledLink to="/" exact>
         Add Check
-      </Link>
+      </StyledLink>
     </OneLink>
     <OneLink>
-      <Link to="/list-taken-times">
+      <StyledLink to="/list-taken-times" exact>
         Track.it
-      </Link>
+      </StyledLink>
     </OneLink>
     <OneLink>
-      <Link to="/your-progress">
+      <StyledLink to="/your-progress" exact>
         Your Progress
-      </Link>
+      </StyledLink>
     </OneLink>
     <OneLink>
-      <Link to="/profile">
+      <StyledLink to="/profile" exact>
         More
-      </Link>
+      </StyledLink>
     </OneLink>
   </Main>
 );
@@ -42,6 +42,14 @@ margin: 2px;
 padding: 10px 0;
 width: 25%;
 
+`;
+
+const StyledLink = styled(NavLink)`
+  color: blue;
+
+  &.active {
+    color: red;
+  }
 `;
 
 export default Menu;
