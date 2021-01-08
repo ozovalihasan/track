@@ -32,7 +32,7 @@ const trackedItemSlice = createSlice({
     destroyTrackedItem: state => {
       const index = state.list.findIndex(trackedItem => trackedItem.id === state.chosen.id);
       if (index !== -1) state.list.splice(index, 1);
-      state.chosen = {};
+      state.chosen = { trackedItem: {}, pieces: [] };
     },
 
     showAllTrackedItems: state => {
