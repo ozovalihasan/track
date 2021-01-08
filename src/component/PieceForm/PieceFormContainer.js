@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { fetchCreatePiece, fetchListTrackedItems } from '../../redux';
 import PieceForm from './PieceForm';
 
@@ -33,6 +34,8 @@ const PieceFormContainer = () => {
     }
   };
 
+  const history = useHistory();
+
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(fetchCreatePiece({
@@ -41,6 +44,7 @@ const PieceFormContainer = () => {
       },
       tracked_item_id: trackedItemId,
     }));
+    history.push('/');
   };
   return (
     <PieceForm
