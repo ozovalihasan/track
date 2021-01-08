@@ -7,12 +7,12 @@ import ListPieces from './ListPieces';
 
 const ListPiecesContainer = ({ children }) => {
   const dispatch = useDispatch();
+  const trackedItemId = useSelector(state => state.trackedItem.chosen.trackedItem.id);
   useEffect(() => {
     dispatch(fetchListPieces());
-  }, []);
+  }, [trackedItemId]);
 
   const pieces = useSelector(state => state.piece.list);
-  const trackedItemId = useSelector(state => state.trackedItem.chosen.trackedItem.id);
 
   let filteredPieces;
   if (trackedItemId) {
