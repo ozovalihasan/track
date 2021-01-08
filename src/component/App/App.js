@@ -13,11 +13,11 @@ import Menu from '../Menu/Menu';
 // import AddCheckContainer from './AddCheck/AddCheckContainer';
 import ShortTakenTimeContainer from '../ShortTakenTime/ShortTakenTimeContainer';
 import ListTakenTimesContainer from '../ListTakenTimes/ListTakenTimesContainer';
-import AddCheck from '../AddCheck/AddCheck';
 import PieceFormContainer from '../PieceForm/PieceFormContainer';
 import ToggleShowHideContainer from '../ToggleShowHide/ToggleShowHideContainer';
 import YourProgressContainer from '../YourProgress/YourProgressContainer';
 import ProfileContainer from '../Profile/ProfileContainer';
+import AddCheckContainer from '../AddCheck/AddCheckContainer';
 // import Header from '../component/Header';
 
 const App = ({ showList }) => (
@@ -40,7 +40,7 @@ const App = ({ showList }) => (
         <Route exact path="/one-piece-create" component={PieceFormContainer} />
         <Route exact path="/your-progress" component={YourProgressContainer} />
         <Route exact path="/profile" component={ProfileContainer} />
-        <Route exact path="/" component={AddCheck} />
+        <Route exact path="/" component={AddCheckContainer} />
         <Route
           exact
           path="/list-taken-times"
