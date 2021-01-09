@@ -5,8 +5,6 @@ import { fetchUserAutoLogin } from '../../redux';
 import App from './App';
 
 const AppContainer = () => {
-  const showList = useSelector(state => state.app.showList);
-
   const dispatch = useDispatch();
   useEffect(() => {
     if (localStorage.token) dispatch(fetchUserAutoLogin());
@@ -14,12 +12,12 @@ const AppContainer = () => {
 
   const user = useSelector(state => state.user);
 
-  if (user.user && localStorage.token) {
-    return (<App showList={showList} />);
+  if (user.username && localStorage.token) {
+    return (<App />);
   }
 
   return (
-    <Redirect to={{ pathname: '/login' }} />
+    <Redirect to={{ pathname: '/log-in' }} />
   );
 };
 

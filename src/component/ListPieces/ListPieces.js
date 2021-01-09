@@ -6,7 +6,11 @@ const ListPieces = ({
 }) => (
   <>
     {
-      pieces.map(piece => React.cloneElement(children, { key: piece.id, piece }))
+      pieces.map(
+        piece => React.cloneElement(
+          children, { key: piece.id, piece },
+        ),
+      )
     }
 
   </>

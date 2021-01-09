@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { fetchDestroyTrackedItem, fetchShowTrackedItem, hideTrackedItems } from '../../redux';
 import ShortTrackedItem from './ShortTrackedItem';
 
-const ShortTrackedItemsContainer = ({ takenTime }) => {
+const ShortTrackedItemContainer = ({ trackedItem }) => {
   const dispatch = useDispatch();
 
   const handleClickChoose = trackedItemId => {
@@ -19,15 +19,15 @@ const ShortTrackedItemsContainer = ({ takenTime }) => {
 
   return (
     <ShortTrackedItem
-      takenTime={takenTime}
+      trackedItem={trackedItem}
       handleClickDeleteTrackedItem={handleClickDeleteTrackedItem}
       handleClickChoose={handleClickChoose}
     />
   );
 };
 
-ShortTrackedItemsContainer.propTypes = {
-  takenTime: PropTypes.shape().isRequired,
+ShortTrackedItemContainer.propTypes = {
+  trackedItem: PropTypes.shape().isRequired,
 };
 
-export default ShortTrackedItemsContainer;
+export default ShortTrackedItemContainer;

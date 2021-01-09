@@ -11,10 +11,9 @@ const PieceForm = ({
   trackedItemId,
   handleSubmit,
   handleChange,
-
 }) => (
   <Form onSubmit={handleSubmit}>
-    <input type="text" name="name" id="" value={name} onChange={handleChange} placeholder="Name" />
+    <input type="text" name="name" value={name} onChange={handleChange} placeholder="Name" />
     <select name="trackedItemId" value={trackedItemId} onChange={handleChange}>
       {trackedItemList.map(trackedItem => (
         <option key={trackedItem.id} value={trackedItem.id}>
@@ -40,7 +39,7 @@ const Form = styled.form`
 color: turquoise;
 `;
 PieceForm.propTypes = {
-  frequencyTimeList: PropTypes.arrayOf().isRequired,
+  frequencyTimeList: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
   frequencyTime: PropTypes.string.isRequired,
   frequency: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,

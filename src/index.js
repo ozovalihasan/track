@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom';
 import store from './redux/store';
 import AppContainer from './component/App/AppContainer';
-import Login from './component/Login';
-import SignUp from './component/SignUp';
+import SignUp from './component/SignUp/SignUp';
+import LogIn from './component/LogIn/LogIn';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +15,7 @@ ReactDOM.render(
       <Provider store={store}>
         <Redirect to={{ pathname: '/' }} />
         <Switch>
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/log-in" component={LogIn} />
           <Route exact path="/sign-up" component={SignUp} />
           <Route path="/" component={AppContainer} />
         </Switch>

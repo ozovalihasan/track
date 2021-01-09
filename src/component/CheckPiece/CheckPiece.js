@@ -51,7 +51,6 @@ const DeleteButton = styled.button`
 `;
 
 CheckPiece.propTypes = {
-
   piece: PropTypes.shape({ name: PropTypes.string }).isRequired,
   handleClickCreate: PropTypes.func.isRequired,
   handleClickDelete: PropTypes.func.isRequired,

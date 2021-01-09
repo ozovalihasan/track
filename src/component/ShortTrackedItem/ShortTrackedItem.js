@@ -9,7 +9,6 @@ const ShortTrackedItem = ({
     <ChooseButton onClick={() => handleClickChoose(trackedItem.id)}>
       <TrackedItem>
         {trackedItem.name}
-
       </TrackedItem>
     </ChooseButton>
     <DeleteButton onClick={() => handleClickDeleteTrackedItem(trackedItem.id)}>
@@ -44,7 +43,7 @@ const ChooseButton = styled.button`
 `;
 
 ShortTrackedItem.propTypes = {
-  takenTime: PropTypes.shape({ name: PropTypes.string }).isRequired,
+  trackedItem: PropTypes.shape({ name: PropTypes.string }).isRequired,
   handleClickChoose: PropTypes.func.isRequired,
   handleClickDeleteTrackedItem: PropTypes.func.isRequired,
 };

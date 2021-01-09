@@ -25,7 +25,6 @@ const ListTakenTimesContainer = ({ children }) => {
   }
 
   return (
-
     <ListTakenTimes takenTimes={filteredTakenTimes}>
       {children}
     </ListTakenTimes>

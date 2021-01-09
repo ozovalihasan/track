@@ -32,16 +32,12 @@ const Main = styled.div`
     border: pink 2px solid;
     display: flex;
 `;
-// position: absolute;
-// bottom: 0;
-// height: auto;
 
 const OneLink = styled.div`
 border: pink 2px solid;
 margin: 2px;
 padding: 10px 0;
 width: 25%;
-
 `;
 
 const StyledLink = styled(NavLink)`

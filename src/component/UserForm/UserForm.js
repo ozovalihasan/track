@@ -12,25 +12,23 @@ const UserForm = ({
     <div>
       <ProfileContainer />
     </div>
-    <form onSubmit={handleSubmit} className="user-form form-main">
+    <form onSubmit={handleSubmit}>
 
       <input
         onChange={handleChange}
         type="text"
         name="username"
         value={username}
-        className="user-form inputs"
         placeholder="Username"
       />
       <input
         onChange={handleChange}
-        type="text"
+        type="password"
         name="password"
         value={password}
-        className="user-form inputs"
         placeholder="Password"
       />
-      <button type="submit" className="user-form submit-button">{buttonName}</button>
+      <button type="submit">{buttonName}</button>
     </form>
   </>
 );

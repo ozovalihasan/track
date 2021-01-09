@@ -5,13 +5,13 @@ const Profile = ({ handleClick, user }) => (
   <div>
     <div>
       {
-        (user.user) ? (
+        (user.username) ? (
           <div>
 
             <p>
               Hi
               {' '}
-              {user.user}
+              {user.username}
             </p>
             <button type="button" onClick={handleClick}>
               Logout
@@ -19,7 +19,7 @@ const Profile = ({ handleClick, user }) => (
           </div>
         ) : (
           <div>
-            <Link to="/login">Login</Link>
+            <Link to="/log-in">Login</Link>
             <Link to="/sign-up">Sign up</Link>
           </div>
         )
@@ -32,7 +32,7 @@ const Profile = ({ handleClick, user }) => (
 Profile.propTypes = {
   handleClick: PropTypes.func.isRequired,
   user: PropTypes.shape({
-    user: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
   }).isRequired,
 };
 

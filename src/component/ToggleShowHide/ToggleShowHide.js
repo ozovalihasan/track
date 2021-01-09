@@ -10,9 +10,9 @@ const ToggleShowHide = ({
     <Main type="button" onClick={handleClick}>
       Show
     </Main>
-    <ComponentButton>
+    <ComponentContainer>
       {showList && (component)}
-    </ComponentButton>
+    </ComponentContainer>
   </div>
 );
 
@@ -28,7 +28,7 @@ width: 100%;
 height: 100%;
 `;
 
-const ComponentButton = styled.button`
+const ComponentContainer = styled.div`
   background-color: white;
 `;
 

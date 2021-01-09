@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import ShortTrackedItemsContainer from '../ShortTrackedItems/ShortTrackedItemContainer';
+import ShortTrackedItemContainer from '../ShortTrackedItem/ShortTrackedItemContainer';
 
 const ListTrackedItems = ({
   trackedItems,
-  handleClickCreateTrackedItem,
   name,
+  handleClickCreateTrackedItem,
   handleChange,
   handleClickShowAll,
 }) => (
@@ -23,7 +23,7 @@ const ListTrackedItems = ({
     </TrackedItem>
     {
     trackedItems.map(trackedItem => (
-      <ShortTrackedItemsContainer key={trackedItem.id} trackedItem={trackedItem} />
+      <ShortTrackedItemContainer key={trackedItem.id} trackedItem={trackedItem} />
     ))
 }
 
@@ -63,10 +63,10 @@ border: yellow 2px solid;
 
 ListTrackedItems.propTypes = {
   trackedItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  name: PropTypes.string.isRequired,
   handleClickCreateTrackedItem: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleClickShowAll: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
 
 };
 

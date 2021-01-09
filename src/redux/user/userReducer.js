@@ -6,13 +6,13 @@ import { axiosBlock } from '../api/apiReducer';
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    user: '',
+    username: '',
   },
   reducers: {
 
     addUser: {
       reducer: (state, { payload }) => {
-        state.user = payload.user.username;
+        state.username = payload.user.username;
       },
       prepare: response => {
         localStorage.token = response.token;
@@ -21,11 +21,11 @@ const userSlice = createSlice({
     },
 
     addUserAutoLogin: (state, { payload }) => {
-      state.user = payload.username;
+      state.username = payload.username;
     },
 
     userSignOut: state => {
-      state.user = '';
+      state.username = '';
     },
 
   },

@@ -8,7 +8,6 @@ const UserFormContainer = ({ fetchUser, buttonName }) => {
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
-
   const handleSubmit = e => {
     e.preventDefault();
     if (username && password) {
@@ -17,8 +16,11 @@ const UserFormContainer = ({ fetchUser, buttonName }) => {
   };
 
   const handleChange = e => {
-    if (e.target.name === 'username') setUsername(e.target.value);
-    if (e.target.name === 'password') setPassword(e.target.value);
+    if (e.target.name === 'username') {
+      setUsername(e.target.value);
+    } else if (e.target.name === 'password') {
+      setPassword(e.target.value);
+    }
   };
 
   return (
