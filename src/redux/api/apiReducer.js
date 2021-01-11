@@ -41,10 +41,10 @@ export const {
   resetApi,
 } = actions;
 
-const JWT_TOKEN = localStorage.token;
 const REACT_APP_SERVER_URL = 'https://dr-ti-api.herokuapp.com';
 
 export const axiosBlock = (pathAPI, usedDispatch, dispatch, headers = true, method = 'get', data = {}) => {
+  const JWT_TOKEN = localStorage.token;
   dispatch(apiRequest());
   axios({
     method,
