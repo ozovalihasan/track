@@ -23,7 +23,6 @@ const YourProgress = ({ pieces }) => {
       ],
       hoverBackgroundColor: [color.thirdColor],
     }));
-    console.warn(datasets);
     return { datasets };
   };
 

@@ -38,9 +38,7 @@ const YourProgressContainer = () => {
 
     const intervalTime = setIntervalTime(date, piece.frequency_time)
       .filter(interval => date.getTime() < interval[1]);
-    console.warn(intervalTime);
-    console.warn(piece.created_at);
-    console.warn(new Date().getTime() - piece.created_at);
+
     const pieceTakenTimes = filteredTakenTimes.filter(takenTime => takenTime.piece.id === piece.id);
 
     const percentageTakenTimes = intervalTime.map(
