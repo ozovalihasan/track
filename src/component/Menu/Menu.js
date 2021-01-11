@@ -32,6 +32,9 @@ const Main = styled.div`
     background-color: ${color.secondColor};
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    position: fixed;
+    bottom: 0;
+    height: 15%;
 `;
 
 const OneLink = styled.div`
