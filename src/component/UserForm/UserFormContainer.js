@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import UserForm from './UserForm';
 
 const UserFormContainer = ({ fetchUser, buttonName }) => {
@@ -8,10 +9,12 @@ const UserFormContainer = ({ fetchUser, buttonName }) => {
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
+  const history = useHistory();
   const handleSubmit = e => {
     e.preventDefault();
     if (username && password) {
       dispatch(fetchUser(username, password));
+      history.push('/');
     }
   };
 
