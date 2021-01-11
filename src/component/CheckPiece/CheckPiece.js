@@ -1,53 +1,73 @@
 /* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import * as color from '../styleVariables';
 
 const CheckPiece = ({
   piece, handleClickCreate, handleClickDelete,
 }) => (
   <Main>
     <CheckButton type="button" onClick={handleClickCreate}>
-      +1
-      <div>
+      <NamePiece>
         {piece.name}
-      </div>
+      </NamePiece>
+      ✔️
     </CheckButton>
     <DeleteButton type="button" onClick={handleClickDelete}>
-      Cancel
+      X
     </DeleteButton>
 
   </Main>
 );
 
 const Main = styled.div`
-  height: 130px;
+  height: 30vw;
+  width: 30vw;
   color: yellow;
-  border: pink 2px solid;
-  margin: 20px;
-  background-color: #1119;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+`;
+
+const NamePiece = styled.div`
+  padding: 10px;
 `;
 
 const CheckButton = styled.button`
-  height: 30px;
-  width: 30px;
-  border: dashed white 2px;
+  height: 30vw;
+  width: 30vw;
+  border: solid ${color.firstColor} 2px;
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px;
+  padding: 10px;
 
   &:hover {
-    background-color: red;
+    background-color: ${color.thirdColor};
   }
 `;
 
 const DeleteButton = styled.button`
-  background-color: red;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  padding: 20px;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  border: 1px solid ${color.fourthColor};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: ${color.fourthColor};
+  }
 `;
 
 CheckPiece.propTypes = {

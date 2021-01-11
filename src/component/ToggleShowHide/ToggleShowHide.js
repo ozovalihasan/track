@@ -23,7 +23,6 @@ ToggleShowHide.propTypes = {
 
 };
 const Main = styled.button`
-border: 2px blue solid;
 width: 100%;
 height: 100%;
 `;

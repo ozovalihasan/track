@@ -16,6 +16,7 @@ const webkitSpinAnimation = keyframes`
 `;
 
 const MainLoading = styled.div`
+z-index: 999;
 border: 16px solid #f3f3f3;
 border-radius: 50%;
 border-top: 16px solid ${firstColor};

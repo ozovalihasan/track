@@ -1,32 +1,30 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import * as color from '../styleVariables';
 
 const Profile = ({ handleClick, user }) => (
-  <div>
-    <div>
-      {
-        (user.username) ? (
-          <div>
-
-            <p>
-              Hi
-              {' '}
-              {user.username}
-            </p>
-            <button type="button" onClick={handleClick}>
-              Logout
-            </button>
-          </div>
-        ) : (
-          <div>
-            <Link to="/log-in">Login</Link>
-            <Link to="/sign-up">Sign up</Link>
-          </div>
-        )
+  <>
+    {
+      (user.username) ? (
+        <UserContainer>
+          <User>
+            Hi
+            {' '}
+            {user.username}
+          </User>
+          <Logout type="button" onClick={handleClick}>
+            Logout
+          </Logout>
+        </UserContainer>
+      ) : (
+        <Main>
+          <StyledLink to="/log-in">Login</StyledLink>
+          <StyledLink to="/sign-up">Sign up</StyledLink>
+        </Main>
+      )
     }
-
-    </div>
-  </div>
+  </>
 );
 
 Profile.propTypes = {
@@ -35,5 +33,39 @@ Profile.propTypes = {
     username: PropTypes.string.isRequired,
   }).isRequired,
 };
+
+const UserContainer = styled.div`
+  background-color: ${color.fifthColor};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
+
+const Main = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
+
+const User = styled.div`
+  padding: 30px;
+  border-radius: 5px;
+`;
+
+const Logout = styled.button`
+  background-color: ${color.firstColor};
+  padding: 10px;
+  color: ${color.fifthColor};
+`;
+
+const StyledLink = styled(Link)`
+  background-color: ${color.firstColor};
+  padding: 20px;
+  color: ${color.fifthColor};
+  margin: 40px 10px;
+`;
 
 export default Profile;

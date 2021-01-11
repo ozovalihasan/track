@@ -1,77 +1,69 @@
 import PropTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
 import styled from 'styled-components';
-import { uuid } from 'uuidv4';
-import { thirdColor, fourthColor } from '../styleVariables';
+import * as color from '../styleVariables';
 
 const YourProgress = ({ pieces }) => {
-  const data = percent => ({
-    labels: ['Completed', 'Uncompleted'],
-    datasets: [
-      {
-        data: [percent, 100 - percent],
-        backgroundColor: [
-          thirdColor,
-          fourthColor,
-        ],
-        hoverBackgroundColor: [thirdColor],
-        borderColor: [
-          thirdColor,
-          fourthColor,
-        ],
+  const data = piece => {
+    const percentArray = piece.percentageTakenTimes.map(
+      percent => ((percent > 100) ? 100 : percent),
+    );
+    const titleDay = ['Today', 'Yesterday', 'Previous Day'];
+    const titleWeek = ['This Week', 'Last Week', 'Previous Week'];
 
-      },
-    ],
-  });
+    const timeNames = (piece.frequency_time === 86400 ? titleDay : titleWeek);
+
+    const datasets = piece.percentageTakenTimes.map((_, index) => ({
+      label: timeNames[index],
+      labels: ['Completed', 'Uncompleted'],
+      data: [percentArray[index], 100 - percentArray[index]],
+      backgroundColor: [
+        color.thirdColor,
+        color.fourthColor,
+      ],
+      hoverBackgroundColor: [color.thirdColor],
+    }));
+    console.warn(datasets);
+    return { datasets };
+  };
 
   const options = {
     animation: {
       animateScale: true,
-      //   animateRotate: true,
+      animateRotate: true,
+      duration: 2000,
     },
+    rotation: 1.25 * Math.PI,
+    circumference: 0.75 * Math.PI,
     hover: false,
     maintainAspectRatio: true,
-    legend: { display: false },
-    centerText: {
-      display: true,
-      text: '90%',
-    },
     responsive: true,
     tooltips: {
+      callbacks: {
+        label(tooltipItem, data) {
+          const dataset = data.datasets[tooltipItem.datasetIndex];
+          const { index } = tooltipItem;
+          return `${dataset.label} ${dataset.labels[index]}: ${dataset.data[index]}`;
+        },
+      },
     },
-    cutoutPercentage: 90,
+    cutoutPercentage: 40,
   };
-
-  const titleDay = ['Today', 'Yesterday', 'Previous Day'];
-  const titleWeek = ['This Week', 'Last Week', 'Previous Week'];
 
   return (
     <Main>
-
       {pieces.map(piece => (
         <OnePieceContainer key={piece.id}>
-          <div>
-            {piece.name}
-          </div>
+
           <OnePiece>
-
-            {piece.percentageTakenTimes.map(
-              (percentage, index) => (
-                <div key={uuid()}>
-
-                  {piece.frequency_time === 86400 ? titleDay[index] : titleWeek[index] }
-                  <DoughnutContainer>
-                    <Doughnut
-                      data={data(percentage)}
-                      options={options}
-                    />
-                  </DoughnutContainer>
-                </div>
-
-              ),
-            )}
+            <Doughnut
+              data={data(piece)}
+              options={options}
+            />
+            <PieceTitle>
+              {piece.name}
+            </PieceTitle>
           </OnePiece>
-
         </OnePieceContainer>
       ))}
     </Main>
@@ -83,25 +75,28 @@ YourProgress.propTypes = {
 };
 
 const Main = styled.div`
-overflow: scroll;
+  overflow: scroll;
+  text-align: center;
+  background-color: ${color.fifthColor};
 `;
 
 const OnePieceContainer = styled.div`
-width: 100%;
-overflow: scroll;
-
+  width: 100%;
+  padding-bottom: 40px;
 `;
 
 const OnePiece = styled.div`
-  display: flex;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  position: relative;
 `;
 
-const DoughnutContainer = styled.div`
-margin: 10px;
-padding: 10px;
-width: 100%;
-display: flex;
+const PieceTitle = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  padding: 10px;
 `;
-// background-color: ${secondColor};
 
 export default YourProgress;

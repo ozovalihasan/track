@@ -1,50 +1,70 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import * as color from '../styleVariables';
 
 const Menu = () => (
   <Main>
-    <OneLink>
-      <StyledLink to="/" exact>
+    <StyledLink to="/" exact>
+      <OneLink>
         Add Check
-      </StyledLink>
-    </OneLink>
-    <OneLink>
-      <StyledLink to="/list-taken-times" exact>
+      </OneLink>
+    </StyledLink>
+    <StyledLink to="/list-taken-times" exact>
+      <OneLink>
         Track.it
-      </StyledLink>
-    </OneLink>
-    <OneLink>
-      <StyledLink to="/your-progress" exact>
+      </OneLink>
+    </StyledLink>
+    <StyledLink to="/your-progress" exact>
+      <OneLink>
         Your Progress
-      </StyledLink>
-    </OneLink>
-    <OneLink>
-      <StyledLink to="/profile" exact>
+      </OneLink>
+    </StyledLink>
+    <StyledLink to="/profile" exact>
+      <OneLink>
         More
-      </StyledLink>
-    </OneLink>
+      </OneLink>
+    </StyledLink>
   </Main>
 );
 
 const Main = styled.div`
-    background-color: orange;
-    border: pink 2px solid;
-    display: flex;
+    background-color: ${color.secondColor};
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 `;
 
 const OneLink = styled.div`
-border: pink 2px solid;
 margin: 2px;
 padding: 10px 0;
-width: 25%;
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
 `;
 
 const StyledLink = styled(NavLink)`
-  color: blue;
+  background-color: ${color.sixthColor};
+  color: ${color.seventhColor};
+  height: 100%;
+  position: relative;
 
   &.active {
-    color: red;
+    &::before {
+      content: '';
+      border-top: 7px ${color.fifthColor} solid;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    width: 100%;
+    color: white;
+    background-color: ${color.firstColor};
   }
 `;
 

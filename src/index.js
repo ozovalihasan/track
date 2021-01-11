@@ -8,6 +8,8 @@ import store from './redux/store';
 import AppContainer from './component/App/AppContainer';
 import SignUp from './component/SignUp/SignUp';
 import LogIn from './component/LogIn/LogIn';
+import './stylesheet/reset.css';
+import './stylesheet/index.css';
 
 ReactDOM.render(
   <React.StrictMode>

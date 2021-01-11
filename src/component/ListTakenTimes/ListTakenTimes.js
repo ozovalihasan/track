@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { fifthColor } from '../styleVariables';
 
 const ListTakenTimes = ({
   children, takenTimes,
@@ -14,13 +15,9 @@ const ListTakenTimes = ({
 );
 
 const Main = styled.div`
-              background-color: blue;
-              border: red 2px solid;
-              display: grid;
-              grid-template-columns: repeat(1, 1fr);
-              grid-gap: 2px;
-              overflow: scroll;
-              align-items: center;
+  background-color: ${fifthColor};
+  overflow: scroll;
+  align-items: center;
 `;
 
 ListTakenTimes.propTypes = {

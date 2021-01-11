@@ -1,35 +1,68 @@
 /* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import * as color from '../styleVariables';
 
 const ShortTakenTime = ({
   takenTime, handleClick,
 }) => (
   <Main>
-    {(new Date(takenTime.created_at * 1000)).toLocaleString()}
-    <div>
+    <TakenTimeName>
       {takenTime.piece.name}
-    </div>
+    </TakenTimeName>
+    <CheckTime>
+      <div>
+        {(new Date(takenTime.created_at * 1000)).toLocaleTimeString()}
+      </div>
+      <div>
+        {(new Date(takenTime.created_at * 1000)).toDateString()}
+      </div>
+    </CheckTime>
     <Destroy type="button" onClick={handleClick}>
-      Cancel
+      X
     </Destroy>
   </Main>
 );
 
 const Main = styled.div`
-  height: 130px;
-  color: yellow;
-  border: pink 2px solid;
-  margin: 20px;
-  background-color: #1119;
-  display: flex;
-  flex-direction: column;
+  color: ${color.sixthColor};
+  background-color: white;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2fr 3fr 1fr; 
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
+  text-align: center;
+  margin: 3px 0;
+  padding: 0 10px;
+`;
+
+const TakenTimeName = styled.div`
+  margin: 10px 0;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  border: solid 1px ${color.firstColor}
+`;
+
+const CheckTime = styled.div`
+  margin: 5px;
+  margin-left: 20px;
+  text-align: left;
+  
 `;
 
 const Destroy = styled.button`
-background-color: yellow;
+  margin:20px;
+  width: 30px;
+  height: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  background-color: ${color.fourthColor}; 
 `;
 ShortTakenTime.propTypes = {
 
