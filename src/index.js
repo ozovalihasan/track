@@ -10,11 +10,15 @@ import SignUp from './component/SignUp/SignUp';
 import LogIn from './component/LogIn/LogIn';
 import './stylesheet/reset.css';
 import './stylesheet/index.css';
+import ErrorContainer from './component/Error/ErrorContainer';
+import LoadingContainer from './component/Loading/LoadingContainer';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
+        <ErrorContainer />
+        <LoadingContainer />
         <Redirect to={{ pathname: '/' }} />
         <Switch>
           <Route exact path="/log-in" component={LogIn} />
