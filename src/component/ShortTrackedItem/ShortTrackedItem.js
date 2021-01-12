@@ -11,13 +11,14 @@ const ShortTrackedItem = ({
       {trackedItem.name}
     </ChooseButton>
     <DeleteButton onClick={() => handleClickDeleteTrackedItem(trackedItem.id)}>
-      Cancel
+      Delete
     </DeleteButton>
   </TrackedItemContainer>
 );
 
 const TrackedItemContainer = styled.div`
   background-color: ${color.fifthColor};
+  width: 100%;
   display: grid;
   grid-template-rows: 4fr 1fr;
 `;
@@ -34,10 +35,9 @@ const ChooseButton = styled.button`
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 100px;
+  min-width: 200px;
   margin: 5px;
   color: white;
-
 `;
 
 ShortTrackedItem.propTypes = {

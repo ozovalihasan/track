@@ -35,6 +35,7 @@ const Main = styled.div`
     position: fixed;
     bottom: 0;
     height: 15%;
+    width: 100%;
 `;
 
 const OneLink = styled.div`

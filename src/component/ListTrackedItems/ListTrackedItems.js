@@ -13,14 +13,17 @@ const ListTrackedItems = ({
   <Main>
     <TrackedItem>
       <CreateContainer>
-        <input type="text" value={name} onChange={handleChange} placeholder="Tracked Item Name" />
+        <CreateInput type="text" value={name} onChange={handleChange} placeholder="Tracked Item Name" />
         <CreateButton onClick={handleClickCreateTrackedItem}>
           Create
         </CreateButton>
       </CreateContainer>
+
+      {(trackedItems.length > 0) && (
       <ShowButton onClick={handleClickShowAll}>
         Show All
       </ShowButton>
+      )}
     </TrackedItem>
     {
     trackedItems.map(trackedItem => (
@@ -41,29 +44,40 @@ const Main = styled.div`
   width: 100%;
 `;
 
+const CreateInput = styled.input`
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid ${color.seventhColor};
+  margin: 10px 0;
+`;
+
 const CreateContainer = styled.div`
   height: 100%;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const CreateButton = styled.button`
   width: 100%;
-  padding: 10px;
   background-color: ${color.firstColor};
   color: white;
+  padding: 20px;
+
 `;
 
 const ShowButton = styled.button`
+  padding: 20px;
   margin: 10px;
   background-color: ${color.firstColor};
-  border-radius: 10px;
   color: white;
 `;
 
 const TrackedItem = styled.div`
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  width: 200px;
+  grid-template-rows: 1fr 1fr;
   height: 100%;
   align-self: center;
   justify-self: center;

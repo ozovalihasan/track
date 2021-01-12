@@ -14,24 +14,25 @@ const UserForm = ({
     <div>
       <ProfileContainer />
     </div>
-    <Form onSubmit={handleSubmit}>
-
-      <FormInput
-        onChange={handleChange}
-        type="text"
-        name="username"
-        value={username}
-        placeholder="Username"
-      />
-      <FormInput
-        onChange={handleChange}
-        type="password"
-        name="password"
-        value={password}
-        placeholder="Password"
-      />
-      <SubmitButton type="submit">{buttonName}</SubmitButton>
-    </Form>
+    <FormContainer>
+      <Form onSubmit={handleSubmit}>
+        <FormInput
+          onChange={handleChange}
+          type="text"
+          name="username"
+          value={username}
+          placeholder="Username"
+        />
+        <FormInput
+          onChange={handleChange}
+          type="password"
+          name="password"
+          value={password}
+          placeholder="Password"
+        />
+        <SubmitButton type="submit">{buttonName}</SubmitButton>
+      </Form>
+    </FormContainer>
   </Main>
 );
 
@@ -50,10 +51,20 @@ const Main = styled.div`
 `;
 
 const FormInput = styled.input`
-  margin: 10px;
   padding: 10px;
+  border-radius: 10px;
+  border: 1px solid ${color.seventhColor};
+  margin: 10px 0;
 `;
 
+const FormContainer = styled.div`
+  width: 100%;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 const Form = styled.form`
   display: flex;
   height: 100%;
@@ -61,12 +72,16 @@ const Form = styled.form`
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 200px;
+
 `;
 
 const SubmitButton = styled.button`
   background-color: ${color.firstColor};
-  padding: 10px;
+  padding: 20px;
   color: ${color.fifthColor};
+  margin: 40px 10px;
+  width: 100%;
 `;
 
 export default UserForm;

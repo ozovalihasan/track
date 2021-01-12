@@ -27,6 +27,16 @@ const Main = styled.div`
   grid-gap: 2px;
   overflow: scroll;
   align-items: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    overflow: none;
+    grid-template-rows: auto;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 const CreateIcon = styled.div`
@@ -41,6 +51,11 @@ const CreateIcon = styled.div`
   font-size: 30px;
   padding: 20px;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    height: 20vw;
+    width: 20vw;
+  }
 `;
 
 export default AddCheck;

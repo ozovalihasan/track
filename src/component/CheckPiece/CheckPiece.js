@@ -30,6 +30,11 @@ const Main = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+
+  @media (min-width: 768px) {
+    width: auto;
+    height: auto;
+  }
 `;
 
 const NamePiece = styled.div`
@@ -49,6 +54,11 @@ const CheckButton = styled.button`
 
   &:hover {
     background-color: ${color.thirdColor};
+  }
+
+  @media (min-width: 768px) {
+    width: 20vw;
+    height: 20vw;
   }
 `;
 

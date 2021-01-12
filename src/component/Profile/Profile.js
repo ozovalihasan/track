@@ -57,8 +57,8 @@ const User = styled.div`
 
 const Logout = styled.button`
   background-color: ${color.firstColor};
-  padding: 10px;
   color: ${color.fifthColor};
+  padding: 20px;
 `;
 
 const StyledLink = styled(Link)`

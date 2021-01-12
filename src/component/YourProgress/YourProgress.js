@@ -77,11 +77,30 @@ const Main = styled.div`
   overflow: scroll;
   text-align: center;
   background-color: ${color.fifthColor};
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: none;
+    grid-template-rows: auto;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 const OnePieceContainer = styled.div`
   width: 100%;
   padding-bottom: 40px;
+
+  @media (min-width: 768px) {
+    width: 25vw;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 const OnePiece = styled.div`
