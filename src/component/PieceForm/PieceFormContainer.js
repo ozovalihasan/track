@@ -8,7 +8,7 @@ const PieceFormContainer = () => {
   const frequencyTimeList = [['Day', '86400'], ['Week', '604800']];
   const [frequencyTime, setFrequencyTime] = useState(frequencyTimeList[0][1]);
   const [name, setName] = useState('');
-  const [frequency, setFrequency] = useState('0');
+  const [frequency, setFrequency] = useState('1');
 
   const trackedItemList = useSelector(state => state.trackedItem.list);
   const [trackedItemId, setTrackedItemId] = useState('');
