@@ -5,22 +5,20 @@ import { fetchCreatePiece, fetchListTrackedItems } from '../../redux';
 import PieceForm from './PieceForm';
 
 const PieceFormContainer = () => {
-  const frequencyTimeList = [['Day', '86400'], ['Week', '604800']];
-  const [frequencyTime, setFrequencyTime] = useState(frequencyTimeList[0][1]);
-  const [name, setName] = useState('');
-  const [frequency, setFrequency] = useState('1');
-
-  const trackedItemList = useSelector(state => state.trackedItem.list);
-  const [trackedItemId, setTrackedItemId] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchListTrackedItems());
   }, []);
 
-  useEffect(() => {
-    if (trackedItemList.length !== 0) { setTrackedItemId(trackedItemList[0].id.toString()); }
-  }, [trackedItemList]);
+  const chosenTrackedItemId = useSelector(state => state.trackedItem.chosen.trackedItem.id) || '';
+
+  const [trackedItemId, setTrackedItemId] = useState(chosenTrackedItemId.toString());
+  const trackedItemList = useSelector(state => state.trackedItem.list);
+  const frequencyTimeList = [['Day', '86400'], ['Week', '604800']];
+  const [frequencyTime, setFrequencyTime] = useState(frequencyTimeList[0][1]);
+  const [name, setName] = useState('');
+  const [frequency, setFrequency] = useState('1');
 
   const handleChange = e => {
     if (e.target.name === 'frequencyTime') {
@@ -46,6 +44,7 @@ const PieceFormContainer = () => {
     }));
     history.push('/');
   };
+
   return (
     <PieceForm
       frequencyTimeList={frequencyTimeList}
