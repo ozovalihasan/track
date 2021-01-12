@@ -10,7 +10,7 @@ const ListTrackedItems = ({
   handleChange,
   handleClickShowAll,
 }) => (
-  <Main>
+  <Main trackedItems={trackedItems}>
     <TrackedItem>
       <CreateContainer>
         <CreateInput type="text" value={name} onChange={handleChange} placeholder="Tracked Item Name" />
@@ -35,13 +35,24 @@ const ListTrackedItems = ({
 );
 
 const Main = styled.div`
-  z-index: 998;
-  display: flex;
-  background-color: ${color.fifthColor};
-  height: 500px;
-  overflow: scroll;
-  position: absolute;
-  width: 100%;
+z-index: 998;
+display: flex;
+background-color: ${color.fifthColor};
+overflow: scroll;
+position: absolute;
+width: 100%;
+${
+  props => (
+    (props.trackedItems.length === 0)
+      ? `
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      ` : `
+        height: 500px;
+      `
+  )
+}
 `;
 
 const CreateInput = styled.input`
