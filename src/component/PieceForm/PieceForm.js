@@ -15,6 +15,7 @@ const PieceForm = ({
 }) => (
   <Main>
     <Form onSubmit={handleSubmit}>
+      <p>Add a piece to your tracked item</p>
       <Input type="text" name="name" value={name} onChange={handleChange} placeholder="Name" required />
       <Select name="trackedItemId" value={trackedItemId} onChange={handleChange} required>
         {trackedItemList.map(trackedItem => (
