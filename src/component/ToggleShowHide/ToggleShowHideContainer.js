@@ -4,11 +4,17 @@ import ToggleShowHide from './ToggleShowHide';
 import { hideTrackedItems, showTrackedItems } from '../../redux';
 
 const ToggleShowHideContainer = ({ children }) => {
-  const showList = useSelector(state => state.app.showList);
-
   const dispatch = useDispatch();
+
+  const showList = useSelector(state => state.app.showList);
+  const chosenTrackedItem = useSelector(state => state.trackedItem.chosen.trackedItem.name);
+
   const handleClick = () => {
-    if (showList) { dispatch(hideTrackedItems()); } else { dispatch(showTrackedItems()); }
+    if (showList) {
+      dispatch(hideTrackedItems());
+    } else {
+      dispatch(showTrackedItems());
+    }
   };
 
   return (
@@ -16,6 +22,7 @@ const ToggleShowHideContainer = ({ children }) => {
       component={children}
       handleClick={handleClick}
       showList={showList}
+      chosenTrackedItem={chosenTrackedItem}
     />
 
   );
