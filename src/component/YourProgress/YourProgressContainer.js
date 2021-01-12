@@ -36,16 +36,17 @@ const YourProgressContainer = () => {
   const mappedPieces = filteredPieces.map(piece => {
     const date = new Date();
 
+    const pieceCreateTime = new Date(piece.created_at);
+
     const intervalTime = setIntervalTime(date, piece.frequency_time)
-      .filter(interval => date.getTime() < interval[1]);
+      .filter(interval => ((pieceCreateTime.getTime()) < interval[1]));
 
     const pieceTakenTimes = filteredTakenTimes.filter(takenTime => takenTime.piece.id === piece.id);
-
     const percentageTakenTimes = intervalTime.map(
       interval => (pieceTakenTimes.filter(
         takenTime => (
-          (takenTime.created_at * 1000 > interval[0])
-             && (interval[1] > takenTime.created_at * 1000)),
+          (interval[0] < takenTime.created_at * 1000)
+             && (takenTime.created_at * 1000 > interval[1])),
       ).length / piece.frequency) * 100,
     );
 
