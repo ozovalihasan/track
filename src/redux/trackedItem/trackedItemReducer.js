@@ -15,13 +15,20 @@ const trackedItemSlice = createSlice({
       state.list = payload;
     },
 
-    showTrackedItem: (state, { payload }) => {
-      state.chosen.trackedItem = payload.tracked_item;
-      state.chosen.pieces = payload.pieces;
+    showTrackedItem: {
+      reducer: (state, { payload }) => {
+        state.chosen.trackedItem = payload.tracked_item;
+        state.chosen.pieces = payload.pieces;
+      },
+      prepare: response => {
+        localStorage.trackedItem = JSON.stringify(response.tracked_item.id);
+        return { payload: response };
+      },
     },
 
     createTrackedItem: (state, { payload }) => {
       state.list.push(payload);
+      state.chosen.trackedItem = payload;
     },
 
     updateTrackedItem: (state, { payload }) => {
@@ -36,6 +43,7 @@ const trackedItemSlice = createSlice({
     },
 
     showAllTrackedItems: state => {
+      localStorage.trackedItem = {};
       state.chosen = { trackedItem: {}, pieces: [] };
     },
 
