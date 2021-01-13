@@ -21,7 +21,7 @@ const ListTrackedItems = ({
 
       {(trackedItems.length > 0) && (
       <ShowButton onClick={handleClickShowAll}>
-        Show All
+        Track All
       </ShowButton>
       )}
     </TrackedItem>
