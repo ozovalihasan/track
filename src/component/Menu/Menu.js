@@ -1,21 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import * as color from '../styleVariables';
 
-const Menu = () => (
+const Menu = ({ isTherePiece }) => (
   <Main>
     <StyledLink to="/" exact>
       <OneLink>
         Add Check
       </OneLink>
     </StyledLink>
-    <StyledLink to="/list-taken-times" exact>
+    <StyledLink to="/list-taken-times" exact disabled={!isTherePiece}>
       <OneLink>
         Track.it
       </OneLink>
     </StyledLink>
-    <StyledLink to="/your-progress" exact>
+    <StyledLink to="/your-progress" exact disabled={!isTherePiece}>
       <OneLink>
         Your Progress
       </OneLink>
@@ -70,6 +71,16 @@ const StyledLink = styled(NavLink)`
     color: white;
     background-color: ${color.firstColor};
   }
+  ${props => props.disabled && `
+    pointer-events: none;
+    background-color: ${color.fifthColor};
+    color: ${color.sixthColor};
+  };
+  `}
 `;
+
+Menu.propTypes = {
+  isTherePiece: PropTypes.bool.isRequired,
+};
 
 export default Menu;
