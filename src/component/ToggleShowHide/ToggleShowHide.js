@@ -8,7 +8,7 @@ const ToggleShowHide = ({
 }) => (
   <div>
     <Main type="button" onClick={handleClick}>
-      Show
+      Don&apos;t Remember, Track
       {' '}
       {chosenTrackedItem || 'All'}
     </Main>
