@@ -16,9 +16,9 @@ const PieceFormContainer = () => {
   const [trackedItemId, setTrackedItemId] = useState(chosenTrackedItemId.toString());
   const trackedItemList = useSelector(state => state.trackedItem.list);
   const frequencyTimeList = [['Day', '86400'], ['Week', '604800']];
-  const [frequencyTime, setFrequencyTime] = useState(frequencyTimeList[0][1]);
+  const [frequencyTime, setFrequencyTime] = useState('');
   const [name, setName] = useState('');
-  const [frequency, setFrequency] = useState('1');
+  const [frequency, setFrequency] = useState('');
 
   const handleChange = e => {
     if (e.target.name === 'frequencyTime') {

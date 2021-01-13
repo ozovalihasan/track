@@ -18,6 +18,11 @@ const PieceForm = ({
       <p>Add a piece to your tracked item</p>
       <Input type="text" name="name" value={name} onChange={handleChange} placeholder="Name" required />
       <Select name="trackedItemId" value={trackedItemId} onChange={handleChange} required>
+        <option
+          hidden
+        >
+          Please Choose Tracked Item
+        </option>
         {trackedItemList.map(trackedItem => (
           <option key={trackedItem.id} value={trackedItem.id}>
             {trackedItem.name}
@@ -25,6 +30,11 @@ const PieceForm = ({
         ))}
       </Select>
       <Select name="frequencyTime" value={frequencyTime} onChange={handleChange} required>
+        <option
+          hidden
+        >
+          Please Choose Time Interval
+        </option>
         {frequencyTimeList.map(time => (
           <option key={time[0]} value={time[1]}>
             {time[0]}
@@ -32,7 +42,7 @@ const PieceForm = ({
         ))}
       </Select>
 
-      <Input type="number" name="frequency" min="1" value={frequency} onChange={handleChange} required />
+      <Input type="number" name="frequency" min="1" value={frequency} onChange={handleChange} required placeholder="How many times?" />
       <CreateButton type="submit"> Create Piece</CreateButton>
     </Form>
   </Main>
