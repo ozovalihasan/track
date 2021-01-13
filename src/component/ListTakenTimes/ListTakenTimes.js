@@ -7,6 +7,8 @@ const ListTakenTimes = ({
   children, takenTimes,
 }) => (
   <Main>
+
+    {takenTimes.length === 0 && 'There is no anything to show'}
     {
       takenTimes.map(takenTime => React.cloneElement(children, { key: takenTime.id, takenTime }))
     }
