@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import CheckPiece from './CheckPiece';
-import { fetchCreateTakenTime, fetchDestroyPiece } from '../../redux';
+import {
+  fetchCreateTakenTime, fetchDestroyPiece, showPiece,
+} from '../../redux';
 
 const CheckPieceContainer = ({ piece }) => {
   const dispatch = useDispatch();
@@ -12,6 +14,7 @@ const CheckPieceContainer = ({ piece }) => {
   };
 
   const handleClickDelete = () => {
+    dispatch(showPiece(piece.id));
     dispatch(fetchDestroyPiece(piece.id));
   };
 

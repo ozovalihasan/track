@@ -15,11 +15,6 @@ const pieceSlice = createSlice({
       state.list = payload;
     },
 
-    showPiece: (state, { payload }) => {
-      state.chosen.piece = payload.piece;
-      state.chosen.takenTimes = payload.taken_times;
-    },
-
     createPiece: (state, { payload }) => {
       state.list.push(payload);
     },
@@ -27,6 +22,11 @@ const pieceSlice = createSlice({
     updatePiece: (state, { payload }) => {
       const index = state.list.findIndex(piece => piece.id === payload.id);
       state.list[index] = payload;
+    },
+
+    showPiece: (state, { payload }) => {
+      state.chosen.id = payload;
+      state.chosen.takenTimes = payload.taken_times;
     },
 
     destroyPiece: state => {
@@ -47,9 +47,9 @@ const { actions, reducer } = pieceSlice;
 
 export const {
   listPieces,
-  showPiece,
   createPiece,
   updatePiece,
+  showPiece,
   destroyPiece,
   resetPiece,
 } = actions;
