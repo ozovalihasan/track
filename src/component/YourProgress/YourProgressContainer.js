@@ -42,14 +42,14 @@ const YourProgressContainer = () => {
       .filter(interval => ((pieceCreateTime.getTime()) < interval[1]));
 
     const pieceTakenTimes = filteredTakenTimes.filter(takenTime => takenTime.piece.id === piece.id);
+
     const percentageTakenTimes = intervalTime.map(
       interval => (pieceTakenTimes.filter(
         takenTime => (
           (interval[0] < takenTime.created_at * 1000)
-             && (takenTime.created_at * 1000 > interval[1])),
+             && (takenTime.created_at * 1000 < interval[1])),
       ).length / piece.frequency) * 100,
     );
-
     return { ...piece, percentageTakenTimes };
   });
 
