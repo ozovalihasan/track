@@ -1,13 +1,12 @@
 # Dr. Ti
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-I developed a Tracking application. The project includes the basic features of
+This project is a tracking application. The project includes the basic features of
 
 - Signing up, logging in and logging out
-- Filter tracked items, and pieces
+- Filtering tracked items, and pieces
 - Checking any piece
 - Listing/filtering all checking time
-- Summarize checked time visually
+- Summarizing checked time visually
 
 The app is using an [API](https://github.com/ozovalihasan/track-api).
 
@@ -62,11 +61,11 @@ Reach out to me at one of the following places!
 
 👤 **Hasan Özovalı**
 
-- Website: [ozovalihasan.com](ozovalihasan.com)
+- Website: [ozovalihasan.com](https://www.ozovalihasan.com/)
 - LinkedIn: [Hasan Özovalı](https://www.linkedin.com/in/hasan-ozovali/)
 - Github: [@ozovalihasan](https://github.com/ozovalihasan)
 - Twitter: [@ozovalihasan](https://twitter.com/ozovalihasan)
-- Mail: [ozovalihasan@gmail.com](ozovalihasan@gmail.com)
+- Mail: [ozovalihasan@gmail.com](mailto:ozovalihasan@gmail.com)
 
 
 ## 🤝 Contributing
@@ -86,8 +85,6 @@ Design is inspired by [work](https://www.behance.net/gallery/13271423/Bodytracki
 Thanks to;
 
 - [Microverse Inc](https://www.microverse.org/)
-- Contributor of [react-chartjs-2](https://github.com/reactchartjs/react-chartjs-2)
-
  
 
 
