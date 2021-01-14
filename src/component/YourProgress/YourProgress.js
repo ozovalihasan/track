@@ -70,7 +70,7 @@ const YourProgress = ({ pieces }) => {
 };
 
 YourProgress.propTypes = {
-  pieces: PropTypes.arrayOf().isRequired,
+  pieces: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
 const Main = styled.div`

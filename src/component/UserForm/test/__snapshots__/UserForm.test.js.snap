@@ -5,57 +5,83 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <div
+        class="sc-bdfBwQ iCancN"
+      >
+        <div>
+          <div>
+            Mock ProfileContainer 
+          </div>
+        </div>
+        <div
+          class="sc-dlfnbm bMORNo"
+        >
+          <form
+            class="sc-hKgILt klxLsr"
+          >
+            <input
+              class="sc-gsTCUz ezFpSP"
+              name="username"
+              placeholder="Username"
+              type="text"
+              value="Mock Username"
+            />
+            <input
+              class="sc-gsTCUz ezFpSP"
+              name="password"
+              placeholder="Password"
+              type="password"
+              value="Mock Password"
+            />
+            <button
+              class="sc-eCssSg cfYtMe"
+              type="submit"
+            >
+              Mock Button Name
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-bdfBwQ iCancN"
+    >
       <div>
         <div>
           Mock ProfileContainer 
         </div>
       </div>
-      <form>
-        <input
-          name="username"
-          placeholder="Username"
-          type="text"
-          value="Mock Username"
-        />
-        <input
-          name="password"
-          placeholder="Password"
-          type="password"
-          value="Mock Password"
-        />
-        <button
-          type="submit"
+      <div
+        class="sc-dlfnbm bMORNo"
+      >
+        <form
+          class="sc-hKgILt klxLsr"
         >
-          Mock Button Name
-        </button>
-      </form>
-    </div>
-  </body>,
-  "container": <div>
-    <div>
-      <div>
-        Mock ProfileContainer 
+          <input
+            class="sc-gsTCUz ezFpSP"
+            name="username"
+            placeholder="Username"
+            type="text"
+            value="Mock Username"
+          />
+          <input
+            class="sc-gsTCUz ezFpSP"
+            name="password"
+            placeholder="Password"
+            type="password"
+            value="Mock Password"
+          />
+          <button
+            class="sc-eCssSg cfYtMe"
+            type="submit"
+          >
+            Mock Button Name
+          </button>
+        </form>
       </div>
     </div>
-    <form>
-      <input
-        name="username"
-        placeholder="Username"
-        type="text"
-        value="Mock Username"
-      />
-      <input
-        name="password"
-        placeholder="Password"
-        type="password"
-        value="Mock Password"
-      />
-      <button
-        type="submit"
-      >
-        Mock Button Name
-      </button>
-    </form>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

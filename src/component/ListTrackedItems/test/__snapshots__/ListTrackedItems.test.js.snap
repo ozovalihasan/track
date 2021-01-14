@@ -6,72 +6,52 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-bdfBwQ knqdID"
+        class="sc-bdfBwQ gAAsmt"
       >
         <div
-          class="sc-hKgILt jBDMws"
+          class="sc-jSgupP iWgfdg"
         >
           <div
-            class="sc-gsTCUz juIusM"
+            class="sc-dlfnbm fyHgzS"
           >
             <input
+              class="sc-gsTCUz ezFpSP"
               placeholder="Tracked Item Name"
               type="text"
               value="new tracked item"
             />
             <button
-              class="sc-dlfnbm iiEjtB"
+              class="sc-hKgILt ewdNpj"
             >
               Create
             </button>
-            <button
-              class="sc-dlfnbm iiEjtB"
-            >
-              Show All
-            </button>
           </div>
-        </div>
-        <div>
-          Mock ShortTrackedItemContainer
-        </div>
-        <div>
-          Mock ShortTrackedItemContainer
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="sc-bdfBwQ knqdID"
+      class="sc-bdfBwQ gAAsmt"
     >
       <div
-        class="sc-hKgILt jBDMws"
+        class="sc-jSgupP iWgfdg"
       >
         <div
-          class="sc-gsTCUz juIusM"
+          class="sc-dlfnbm fyHgzS"
         >
           <input
+            class="sc-gsTCUz ezFpSP"
             placeholder="Tracked Item Name"
             type="text"
             value="new tracked item"
           />
           <button
-            class="sc-dlfnbm iiEjtB"
+            class="sc-hKgILt ewdNpj"
           >
             Create
           </button>
-          <button
-            class="sc-dlfnbm iiEjtB"
-          >
-            Show All
-          </button>
         </div>
-      </div>
-      <div>
-        Mock ShortTrackedItemContainer
-      </div>
-      <div>
-        Mock ShortTrackedItemContainer
       </div>
     </div>
   </div>,

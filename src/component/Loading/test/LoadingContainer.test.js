@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import userEvent from '@testing-library/user-event';
 import LoadingContainer from '../LoadingContainer';
 
 jest.mock('../Loading', () => {

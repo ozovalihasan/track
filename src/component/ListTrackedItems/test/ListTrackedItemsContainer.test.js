@@ -83,7 +83,7 @@ describe('<ListTrackedItemsContainer />', () => {
     expect(store.dispatch).toHaveBeenCalledTimes(3);
   });
 
-  it('calls handleClickShowAll when \'Show All\'', () => {
+  it('calls handleChange when input of name is changed ', () => {
     useStateSpy.mockImplementation(() => (['Mock Name', setState]));
     render(renderReadyComponent);
 

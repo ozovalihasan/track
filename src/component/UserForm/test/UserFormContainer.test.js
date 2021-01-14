@@ -41,15 +41,23 @@ jest.mock('../UserForm', () => {
   return UserForm;
 });
 
+const mockHistoryPush = jest.fn();
+jest.mock('react-router-dom', () => ({
+  useHistory: () => ({
+    push: mockHistoryPush,
+  }),
+}));
+
 const mockStore = configureStore();
 const store = mockStore();
 store.dispatch = jest.fn();
 
-let renderReadyComponent;
 let setState;
 let useStateSpy;
 const fetchUser = jest.fn();
 const buttonName = 'Mock Button Name';
+
+let renderReadyComponent;
 
 beforeEach(() => {
   setState = jest.fn();
@@ -90,12 +98,13 @@ describe('<UserFormContainer />', () => {
     expect(setState).toHaveBeenCalledWith('password1');
   });
 
-  it('triggers handleSubmit if submit button is clicked', () => {
+  it('triggers handleSubmit and redirects to \'/\' if submit button is clicked', () => {
     useStateSpy.mockImplementation(init => [`mock${init}`, setState]);
     render(renderReadyComponent);
 
     userEvent.click(screen.getByText('Submit'));
     expect(store.dispatch).toHaveBeenCalledTimes(1);
+    expect(mockHistoryPush).toHaveBeenCalledWith('/');
   });
 
   it('renders correctly', () => {

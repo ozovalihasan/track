@@ -29,13 +29,16 @@ describe('<ShortTakenTime />', () => {
   it('renders takenTime', () => {
     render(renderReadyComponent);
 
-    expect(screen.getByText(/1\/1\/1970, 2:00:10 AM/i)).toBeInTheDocument();
+    expect(screen.getByText(/Mock Piece Name/i)).toBeInTheDocument();
+    expect(screen.getByText(/Thu Jan 01 1970/i)).toBeInTheDocument();
+    expect(screen.getByText(/2:00:10 AM/i)).toBeInTheDocument();
   });
-  it('call handleClick when \'Cancel\' is submitted', () => {
+
+  it('call handleClick when \'X\' is submitted', () => {
     render(renderReadyComponent);
 
     expect(handleClick).not.toHaveBeenCalled();
-    userEvent.click(screen.getByText(/Cancel/i));
+    userEvent.click(screen.getByText(/X/i));
     expect(handleClick).toHaveBeenCalled();
   });
 

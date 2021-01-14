@@ -6,44 +6,48 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-bdfBwQ dZUjVD"
+        class="sc-bdfBwQ dUmQx"
       >
         <button
-          class="sc-gsTCUz hOQoSq"
+          class="sc-dlfnbm lhbqep"
           type="button"
         >
-          +1
-          <div>
+          <div
+            class="sc-gsTCUz eeeOZp"
+          >
             Piece Name
           </div>
+          ✔️
         </button>
         <button
-          class="sc-dlfnbm qKCXj"
+          class="sc-hKgILt ephStI"
           type="button"
         >
-          Cancel
+          X
         </button>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="sc-bdfBwQ dZUjVD"
+      class="sc-bdfBwQ dUmQx"
     >
       <button
-        class="sc-gsTCUz hOQoSq"
+        class="sc-dlfnbm lhbqep"
         type="button"
       >
-        +1
-        <div>
+        <div
+          class="sc-gsTCUz eeeOZp"
+        >
           Piece Name
         </div>
+        ✔️
       </button>
       <button
-        class="sc-dlfnbm qKCXj"
+        class="sc-hKgILt ephStI"
         type="button"
       >
-        Cancel
+        X
       </button>
     </div>
   </div>,

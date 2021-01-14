@@ -19,7 +19,7 @@ const ToggleShowHideContainer = ({ children }) => {
 
   return (
     <ToggleShowHide
-      component={children}
+      childComponent={children}
       handleClick={handleClick}
       showList={showList}
       chosenTrackedItem={chosenTrackedItem}

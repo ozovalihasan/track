@@ -8,22 +8,12 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import Menu from '../Menu';
 
-jest.mock('../../UserForm/UserFormContainer', () => {
-  const UserFormContainer = () => (
-    <div>
-      Mock UserFormContainer
-    </div>
-  );
-  UserFormContainer.displayName = 'UserFormContainer';
-
-  return UserFormContainer;
-});
-
+const isTherePiece = false;
 let renderReadyComponent;
 beforeEach(() => {
   renderReadyComponent = (
     <BrowserRouter>
-      <Menu />
+      <Menu isTherePiece={isTherePiece} />
       <Redirect to="/test" />
       <Switch>
         <Route exact path="/" render={() => <>Main Page</>} />

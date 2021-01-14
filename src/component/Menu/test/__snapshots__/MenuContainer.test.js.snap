@@ -5,11 +5,17 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      Mock Menu
+      <div>
+        Mock Menu
+        isTherePiece: false
+      </div>
     </div>
   </body>,
   "container": <div>
-    Mock Menu
+    <div>
+      Mock Menu
+      isTherePiece: false
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

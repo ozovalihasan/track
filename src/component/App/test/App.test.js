@@ -1,11 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
-  BrowserRouter, Redirect, Route, Switch,
+  BrowserRouter, Redirect,
 } from 'react-router-dom';
 import '@testing-library/jest-dom';
-import userEvent from '@testing-library/user-event';
 import App from '../App';
 
 jest.mock('../../AddCheck/AddCheckContainer', () => {
@@ -20,12 +18,6 @@ jest.mock('../../Error/ErrorContainer', () => {
   return ErrorContainer;
 });
 
-jest.mock('../../Loading/LoadingContainer', () => {
-  const LoadingContainer = () => (<div>Mock LoadingContainer </div>);
-  LoadingContainer.displayName = 'LoadingContainer';
-  return LoadingContainer;
-});
-
 jest.mock('../../ListTakenTimes/ListTakenTimesContainer', () => {
   const ListTakenTimesContainer = () => (<div>Mock ListTakenTimesContainer </div>);
   ListTakenTimesContainer.displayName = 'ListTakenTimesContainer';
@@ -38,10 +30,22 @@ jest.mock('../../ListTrackedItems/ListTrackedItemsContainer', () => {
   return ListTrackedItemsContainer;
 });
 
-jest.mock('../../Menu/Menu', () => {
-  const Menu = () => (<div>Mock Menu </div>);
-  Menu.displayName = 'Menu';
-  return Menu;
+jest.mock('../../Loading/LoadingContainer', () => {
+  const LoadingContainer = () => (<div>Mock LoadingContainer </div>);
+  LoadingContainer.displayName = 'LoadingContainer';
+  return LoadingContainer;
+});
+
+jest.mock('../../LogIn/LogIn', () => {
+  const LogIn = () => (<div>Mock LogIn </div>);
+  LogIn.displayName = 'LogIn';
+  return LogIn;
+});
+
+jest.mock('../../Menu/MenuContainer', () => {
+  const MenuContainer = () => (<div>Mock MenuContainer </div>);
+  MenuContainer.displayName = 'MenuContainer';
+  return MenuContainer;
 });
 
 jest.mock('../../PieceForm/PieceFormContainer', () => {
@@ -62,6 +66,12 @@ jest.mock('../../ShortTakenTime/ShortTakenTimeContainer', () => {
   return ShortTakenTimeContainer;
 });
 
+jest.mock('../../SignUp/SignUp', () => {
+  const SignUp = () => (<div>Mock SignUp </div>);
+  SignUp.displayName = 'SignUp';
+  return SignUp;
+});
+
 jest.mock('../../ToggleShowHide/ToggleShowHideContainer', () => {
   const ToggleShowHideContainer = () => (<div>Mock ToggleShowHideContainer</div>);
   ToggleShowHideContainer.displayName = 'ToggleShowHideContainer';
@@ -74,82 +84,110 @@ jest.mock('../../YourProgress/YourProgressContainer', () => {
   return YourProgressContainer;
 });
 
+const renderedComponent = ({ isThereTrackedItem, isThereUser }, pathname) => render(
+  <BrowserRouter>
+    <App isThereTrackedItem={isThereTrackedItem} isThereUser={isThereUser} />
+    {pathname && <Redirect to={{ pathname }} />}
+  </BrowserRouter>,
+);
+
 describe('<App />', () => {
-  it('renders ErrorContainer,LoadingContainer,ToggleShowHideContainer, and Menu components', () => {
-    render(
-      <BrowserRouter>
-        <App />
-        {/* <Redirect to={{ pathname: '/one-piece-create' }} /> */}
-      </BrowserRouter>,
-    );
+  const props = {
+    isThereUser: false,
+    isThereTrackedItem: false,
+  };
+  it('renders  ErrorContainer and LoadingContainer', () => {
+    renderedComponent(props);
 
     expect(screen.getByText(/Mock ErrorContainer/i)).toBeInTheDocument();
     expect(screen.getByText(/Mock LoadingContainer/i)).toBeInTheDocument();
-    expect(screen.getByText(/Mock ToggleShowHideContainer/i)).toBeInTheDocument();
-    expect(screen.getByText(/Mock Menu/i)).toBeInTheDocument();
   });
 
-  it('renders AddCheckContainer component when \'/\' is directed', () => {
-    render(
-      <BrowserRouter>
-        <App />
-        <Redirect to={{ pathname: '/' }} />
-      </BrowserRouter>,
-    );
+  describe('If there is no any user', () => {
+    const props = {
+      isThereUser: false,
+      isThereTrackedItem: false,
+    };
 
-    expect(screen.getByText(/Mock AddCheckContainer/i)).toBeInTheDocument();
+    it('renders LogIn when \'/log-in\' is directed', () => {
+      renderedComponent(props, '/log-in');
+
+      expect(screen.getByText(/Mock LogIn/i)).toBeInTheDocument();
+    });
+
+    it('renders SignUp when \'/sign-up\' is directed', () => {
+      renderedComponent(props, '/sign-up');
+
+      expect(screen.getByText(/Mock SignUp/i)).toBeInTheDocument();
+    });
+
+    it('renders correctly', () => {
+      expect(renderedComponent(props)).toMatchSnapshot();
+    });
   });
 
-  it('renders PieceFormContainer component when \'/one-piece-create\' is directed', () => {
-    render(
-      <BrowserRouter>
-        <App />
-        <Redirect to={{ pathname: '/one-piece-create' }} />
-      </BrowserRouter>,
-    );
+  describe('If there is a user', () => {
+    describe('If there is no any tracked item', () => {
+      const props = {
+        isThereUser: true,
+        isThereTrackedItem: false,
+      };
 
-    expect(screen.getByText(/Mock PieceFormContainer/i)).toBeInTheDocument();
-  });
+      it('renders ListTrackedItemsContainer ', () => {
+        renderedComponent(props);
 
-  it('renders YourProgressContainer component when \'/your-progress\' is directed', () => {
-    render(
-      <BrowserRouter>
-        <App />
-        <Redirect to={{ pathname: '/your-progress' }} />
-      </BrowserRouter>,
-    );
+        expect(screen.getByText(/Mock ListTrackedItemsContainer/i)).toBeInTheDocument();
+      });
 
-    expect(screen.getByText(/Mock YourProgressContainer/i)).toBeInTheDocument();
-  });
+      it('renders correctly', () => {
+        expect(renderedComponent(props)).toMatchSnapshot();
+      });
+    });
 
-  it('renders ProfileContainer component when \'/profile\' is directed', () => {
-    render(
-      <BrowserRouter>
-        <App />
-        <Redirect to={{ pathname: '/profile' }} />
-      </BrowserRouter>,
-    );
+    describe('If there is a tracked item', () => {
+      const props = {
+        isThereUser: true,
+        isThereTrackedItem: true,
+      };
 
-    expect(screen.getByText(/Mock ProfileContainer/i)).toBeInTheDocument();
-  });
+      it('renders ToggleShowHideContainer', () => {
+        renderedComponent(props);
+        expect(screen.getByText(/Mock ToggleShowHideContainer/i)).toBeInTheDocument();
+      });
 
-  it('renders ListTakenTimesContainer component when \'/list-taken-times\' is directed', () => {
-    render(
-      <BrowserRouter>
-        <App />
-        <Redirect to={{ pathname: '/list-taken-times' }} />
-      </BrowserRouter>,
-    );
+      it('renders AddCheckContainer when \'/\' is directed', () => {
+        renderedComponent(props, '/');
 
-    expect(screen.getByText(/Mock ListTakenTimesContainer/i)).toBeInTheDocument();
-  });
+        expect(screen.getByText(/Mock AddCheckContainer/i)).toBeInTheDocument();
+      });
 
-  it('renders correctly', () => {
-    const renderedContainer = render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>,
-    );
-    expect(renderedContainer).toMatchSnapshot();
+      it('renders PieceFormContainer when \'/one-piece-create\' is directed', () => {
+        renderedComponent(props, '/one-piece-create');
+
+        expect(screen.getByText(/Mock PieceFormContainer/i)).toBeInTheDocument();
+      });
+
+      it('renders YourProgressContainer when \'/your-progress\' is directed', () => {
+        renderedComponent(props, '/your-progress');
+
+        expect(screen.getByText(/Mock YourProgressContainer/i)).toBeInTheDocument();
+      });
+
+      it('renders ProfileContainer when \'/profile\' is directed', () => {
+        renderedComponent(props, '/profile');
+
+        expect(screen.getByText(/Mock ProfileContainer/i)).toBeInTheDocument();
+      });
+
+      it('renders ListTakenTimesContainer when \'/list-taken-times\' is directed', () => {
+        renderedComponent(props, '/list-taken-times');
+
+        expect(screen.getByText(/Mock ListTakenTimesContainer/i)).toBeInTheDocument();
+      });
+
+      it('renders correctly', () => {
+        expect(renderedComponent(props)).toMatchSnapshot();
+      });
+    });
   });
 });

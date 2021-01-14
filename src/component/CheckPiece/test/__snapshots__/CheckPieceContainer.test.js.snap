@@ -5,45 +5,35 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="sc-bdfBwQ dZUjVD"
-      >
+      <div>
+        Mock CheckPiece
+        {"name":"Mock Piece Name"}
         <button
-          class="sc-gsTCUz hOQoSq"
           type="button"
         >
-          +1
-          <div>
-            Mock Piece Name
-          </div>
+          Create Piece
         </button>
         <button
-          class="sc-dlfnbm qKCXj"
           type="button"
         >
-          Cancel
+          Delete Piece
         </button>
       </div>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="sc-bdfBwQ dZUjVD"
-    >
+    <div>
+      Mock CheckPiece
+      {"name":"Mock Piece Name"}
       <button
-        class="sc-gsTCUz hOQoSq"
         type="button"
       >
-        +1
-        <div>
-          Mock Piece Name
-        </div>
+        Create Piece
       </button>
       <button
-        class="sc-dlfnbm qKCXj"
         type="button"
       >
-        Cancel
+        Delete Piece
       </button>
     </div>
   </div>,

@@ -5,18 +5,112 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <form
-        class="sc-bdfBwQ kBOUOb"
+      <div
+        class="sc-bdfBwQ fIFvMB"
       >
+        <form
+          class="sc-gsTCUz eBuwWb"
+        >
+          <p>
+            Add a piece to your tracked item
+          </p>
+          <input
+            class="sc-dlfnbm hBgaUY"
+            name="name"
+            placeholder="Name"
+            required=""
+            type="text"
+            value="mock name"
+          />
+          <select
+            class="sc-hKgILt kjkmOC"
+            name="trackedItemId"
+            required=""
+          >
+            <option
+              hidden=""
+            >
+              Please Choose Tracked Item
+            </option>
+            <option
+              value="1"
+            >
+              First Tracked Item
+            </option>
+            <option
+              value="2"
+            >
+              Second Tracked Item
+            </option>
+          </select>
+          <select
+            class="sc-hKgILt kjkmOC"
+            name="frequencyTime"
+            required=""
+          >
+            <option
+              hidden=""
+            >
+              Please Choose Time Interval
+            </option>
+            <option
+              value="86400"
+            >
+              Day
+            </option>
+            <option
+              value="604800"
+            >
+              Week
+            </option>
+          </select>
+          <input
+            class="sc-dlfnbm hBgaUY"
+            min="1"
+            name="frequency"
+            placeholder="How many times?"
+            required=""
+            type="number"
+            value="0"
+          />
+          <button
+            class="sc-eCssSg gptWSS"
+            type="submit"
+          >
+             Create Piece
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-bdfBwQ fIFvMB"
+    >
+      <form
+        class="sc-gsTCUz eBuwWb"
+      >
+        <p>
+          Add a piece to your tracked item
+        </p>
         <input
+          class="sc-dlfnbm hBgaUY"
           name="name"
           placeholder="Name"
+          required=""
           type="text"
           value="mock name"
         />
         <select
+          class="sc-hKgILt kjkmOC"
           name="trackedItemId"
+          required=""
         >
+          <option
+            hidden=""
+          >
+            Please Choose Tracked Item
+          </option>
           <option
             value="1"
           >
@@ -29,8 +123,15 @@ Object {
           </option>
         </select>
         <select
+          class="sc-hKgILt kjkmOC"
           name="frequencyTime"
+          required=""
         >
+          <option
+            hidden=""
+          >
+            Please Choose Time Interval
+          </option>
           <option
             value="86400"
           >
@@ -43,69 +144,22 @@ Object {
           </option>
         </select>
         <input
-          id=""
+          class="sc-dlfnbm hBgaUY"
+          min="1"
           name="frequency"
+          placeholder="How many times?"
+          required=""
           type="number"
           value="0"
         />
         <button
+          class="sc-eCssSg gptWSS"
           type="submit"
         >
            Create Piece
         </button>
       </form>
     </div>
-  </body>,
-  "container": <div>
-    <form
-      class="sc-bdfBwQ kBOUOb"
-    >
-      <input
-        name="name"
-        placeholder="Name"
-        type="text"
-        value="mock name"
-      />
-      <select
-        name="trackedItemId"
-      >
-        <option
-          value="1"
-        >
-          First Tracked Item
-        </option>
-        <option
-          value="2"
-        >
-          Second Tracked Item
-        </option>
-      </select>
-      <select
-        name="frequencyTime"
-      >
-        <option
-          value="86400"
-        >
-          Day
-        </option>
-        <option
-          value="604800"
-        >
-          Week
-        </option>
-      </select>
-      <input
-        id=""
-        name="frequency"
-        type="number"
-        value="0"
-      />
-      <button
-        type="submit"
-      >
-         Create Piece
-      </button>
-    </form>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

@@ -7,9 +7,9 @@ const setIntervalTime = (date, dayOrWeek) => {
   const dateInteger = date.getTime();
 
   const timeIntervals = [
-    [dateInteger, dateInteger + (dayOrWeek * 1000)],
-    [dateInteger - dayOrWeek * 1000, dateInteger],
-    [dateInteger - (2 * dayOrWeek * 1000), dateInteger - dayOrWeek * 1000],
+    { start: dateInteger, end: dateInteger + (dayOrWeek * 1000) },
+    { start: dateInteger - dayOrWeek * 1000, end: dateInteger },
+    { start: dateInteger - (2 * dayOrWeek * 1000), end: dateInteger - dayOrWeek * 1000 },
   ];
   return timeIntervals;
 };

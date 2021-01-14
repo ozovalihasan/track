@@ -14,13 +14,13 @@ jest.mock('../ToggleShowHide', () => {
   // eslint-disable-next-line global-require
   const PropTypes = require('prop-types');
   const ToggleShowHide = ({
-    component,
+    childComponent,
     handleClick,
     showList,
   }) => (
     <>
       Mock ToggleShowHide
-      {(component)}
+      {(childComponent)}
       {`showList: ${showList}`}
       <button type="button" onClick={handleClick}>Click Button</button>
 
@@ -28,7 +28,7 @@ jest.mock('../ToggleShowHide', () => {
   );
 
   ToggleShowHide.propTypes = {
-    component: PropTypes.element.isRequired,
+    childComponent: PropTypes.element.isRequired,
     handleClick: PropTypes.func.isRequired,
     showList: PropTypes.bool.isRequired,
   };
@@ -38,6 +38,13 @@ jest.mock('../ToggleShowHide', () => {
 
 const initStore = {
   app: { showList: true },
+  trackedItem: {
+    chosen: {
+      trackedItem: {
+        name: 'Mock Name',
+      },
+    },
+  },
 };
 
 const mockStore = configureStore();

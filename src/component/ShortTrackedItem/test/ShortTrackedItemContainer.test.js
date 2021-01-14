@@ -62,7 +62,9 @@ describe('<ShortTrackedItemContainer />', () => {
     render(renderReadyComponent);
 
     expect(store.dispatch).toHaveBeenCalledTimes(0);
+
     userEvent.click(screen.getByText(/Delete Tracked Item/));
+
     expect(store.dispatch).toHaveBeenCalledTimes(2);
   });
 
@@ -70,7 +72,9 @@ describe('<ShortTrackedItemContainer />', () => {
     render(renderReadyComponent);
 
     expect(store.dispatch).toHaveBeenCalledTimes(0);
+
     userEvent.click(screen.getByText(/Choose Tracked Item/));
+
     expect(store.dispatch).toHaveBeenCalledTimes(2);
   });
 

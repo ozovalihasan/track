@@ -23,7 +23,6 @@ const MockChildren = () => (
 
 const initStore = {
   trackedItem: { chosen: { trackedItem: { } } },
-  // trackedItem: { chosen: { trackedItem: { } } },
   piece: {
     list: [
       { tracked_item_id: 1, name: 'Piece of First Tracked Item' },
@@ -37,6 +36,13 @@ store.dispatch = jest.fn();
 
 let renderReadyComponent;
 const pieces = {};
+
+const mockHistoryPush = jest.fn();
+jest.mock('react-router-dom', () => ({
+  useHistory: () => ({
+    push: mockHistoryPush,
+  }),
+}));
 
 beforeEach(() => {
   renderReadyComponent = (
@@ -68,6 +74,12 @@ describe('<ListPiecesContainer />', () => {
 
     expect(screen.getByText(/Piece of First Tracked Item/i)).toBeInTheDocument();
     expect(screen.queryByText(/Piece of Second Tracked Item/i)).not.toBeInTheDocument();
+  });
+
+  it('directs to \'/one-piece-create\' if the length of filteredPieces equals to 0', () => {
+    initStore.trackedItem.chosen.trackedItem.id = 3;
+    render(renderReadyComponent);
+    expect(mockHistoryPush).toHaveBeenCalledWith('/one-piece-create');
   });
 
   it('renders correctly', () => {

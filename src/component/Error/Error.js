@@ -13,7 +13,6 @@ const Error = ({
 );
 
 const ErrorMain = styled.div`
-font-family: 'Courier New', Courier, monospace;
 text-align: center;
 width: 100%;
 position: absolute;

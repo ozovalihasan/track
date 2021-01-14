@@ -7,14 +7,14 @@ Object {
     <div>
       <div>
         Mock ListPieces
-        {"pieces":[{"tracked_item_id":1,"name":"Piece of First Tracked Item"}],"children":{"key":null,"ref":null,"props":{},"_owner":null,"_store":{}}}
+        {"pieces":[],"children":{"key":null,"ref":null,"props":{},"_owner":null,"_store":{}}}
       </div>
     </div>
   </body>,
   "container": <div>
     <div>
       Mock ListPieces
-      {"pieces":[{"tracked_item_id":1,"name":"Piece of First Tracked Item"}],"children":{"key":null,"ref":null,"props":{},"_owner":null,"_store":{}}}
+      {"pieces":[],"children":{"key":null,"ref":null,"props":{},"_owner":null,"_store":{}}}
     </div>
   </div>,
   "debug": [Function],

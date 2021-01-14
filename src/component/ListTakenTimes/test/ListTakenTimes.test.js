@@ -12,32 +12,43 @@ MockChildren.propTypes = {
   takenTime: PropTypes.shape({ id: PropTypes.number, name: PropTypes.string }).isRequired,
 };
 
-const takenTimes = [
-  { id: 1, name: 'First Taken Time' },
-  { id: 2, name: 'Second Taken Time' },
-];
-
-let renderReadyComponent;
 const takenTime = {};
-
+const renderReadyComponent = takenTimes => (
+  <ListTakenTimes takenTimes={takenTimes}>
+    <MockChildren takenTime={takenTime} />
+  </ListTakenTimes>
+);
 beforeEach(() => {
-  renderReadyComponent = (
-    <ListTakenTimes takenTimes={takenTimes}>
-      <MockChildren takenTime={takenTime} />
-    </ListTakenTimes>
-  );
+
 });
 
 describe('<ListTakenTimes />', () => {
-  it('renders children with taken times', () => {
-    render(renderReadyComponent);
+  describe('If takenTimes is not empty', () => {
+    const takenTimes = [
+      { id: 1, name: 'First Taken Time' },
+      { id: 2, name: 'Second Taken Time' },
+    ];
+    it('renders children with taken times', () => {
+      render(renderReadyComponent(takenTimes));
 
-    expect(screen.getByText(/First Taken Time/i)).toBeInTheDocument();
-    expect(screen.getByText(/Second Taken Time/i)).toBeInTheDocument();
+      expect(screen.getByText(/First Taken Time/i)).toBeInTheDocument();
+      expect(screen.getByText(/Second Taken Time/i)).toBeInTheDocument();
+    });
+    it('renders correctly', () => {
+      const renderedContainer = render(renderReadyComponent(takenTimes));
+      expect(renderedContainer).toMatchSnapshot();
+    });
   });
 
-  it('renders correctly', () => {
-    const renderedContainer = render(renderReadyComponent);
-    expect(renderedContainer).toMatchSnapshot();
+  describe('If takenTimes is not empty', () => {
+    const takenTimes = [];
+    it('shows a text ', () => {
+      render(renderReadyComponent(takenTimes));
+      expect(screen.getByText(/There is no anything to show/i)).toBeInTheDocument();
+    });
+    it('renders correctly', () => {
+      const renderedContainer = render(renderReadyComponent(takenTimes));
+      expect(renderedContainer).toMatchSnapshot();
+    });
   });
 });

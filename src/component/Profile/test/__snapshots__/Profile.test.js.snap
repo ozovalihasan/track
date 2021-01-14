@@ -5,41 +5,41 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
-        <div>
-          <div>
-            <a
-              href="/log-in"
-            >
-              Login
-            </a>
-            <a
-              href="/sign-up"
-            >
-              Sign up
-            </a>
-          </div>
-        </div>
+      <div
+        class="sc-gsTCUz eoCqTR"
+      >
+        <a
+          class="sc-eCssSg mIEpj"
+          href="/log-in"
+        >
+          Login
+        </a>
+        <a
+          class="sc-eCssSg mIEpj"
+          href="/sign-up"
+        >
+          Sign up
+        </a>
       </div>
       Main Page
     </div>
   </body>,
   "container": <div>
-    <div>
-      <div>
-        <div>
-          <a
-            href="/log-in"
-          >
-            Login
-          </a>
-          <a
-            href="/sign-up"
-          >
-            Sign up
-          </a>
-        </div>
-      </div>
+    <div
+      class="sc-gsTCUz eoCqTR"
+    >
+      <a
+        class="sc-eCssSg mIEpj"
+        href="/log-in"
+      >
+        Login
+      </a>
+      <a
+        class="sc-eCssSg mIEpj"
+        href="/sign-up"
+      >
+        Sign up
+      </a>
     </div>
     Main Page
   </div>,
@@ -102,41 +102,43 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
-        <div>
-          <div>
-            <p>
-              Hi
-               
-              Mock Username
-            </p>
-            <button
-              type="button"
-            >
-              Logout
-            </button>
-          </div>
+      <div
+        class="sc-bdfBwQ wxBhl"
+      >
+        <div
+          class="sc-dlfnbm fcpbLr"
+        >
+          Hi
+           
+          Mock Username
         </div>
+        <button
+          class="sc-hKgILt iMTQQA"
+          type="button"
+        >
+          Logout
+        </button>
       </div>
       Main Page
     </div>
   </body>,
   "container": <div>
-    <div>
-      <div>
-        <div>
-          <p>
-            Hi
-             
-            Mock Username
-          </p>
-          <button
-            type="button"
-          >
-            Logout
-          </button>
-        </div>
+    <div
+      class="sc-bdfBwQ wxBhl"
+    >
+      <div
+        class="sc-dlfnbm fcpbLr"
+      >
+        Hi
+         
+        Mock Username
       </div>
+      <button
+        class="sc-hKgILt iMTQQA"
+        type="button"
+      >
+        Logout
+      </button>
     </div>
     Main Page
   </div>,

@@ -5,25 +5,13 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="sc-bdfBwQ beiEND"
-      >
-        There is an error
-        .
-         
-        Please try again.
-      </div>
+      Mock Error
+      "There is an error"
     </div>
   </body>,
   "container": <div>
-    <div
-      class="sc-bdfBwQ beiEND"
-    >
-      There is an error
-      .
-       
-      Please try again.
-    </div>
+    Mock Error
+    "There is an error"
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

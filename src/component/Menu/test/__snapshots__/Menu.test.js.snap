@@ -6,96 +6,100 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-bdfBwQ cUrnRJ"
+        class="sc-bdfBwQ eYpKlR"
       >
-        <div
-          class="sc-gsTCUz igmOJl"
+        <a
+          class="sc-dlfnbm hIXonU"
+          href="/"
         >
-          <a
-            class="sc-dlfnbm dGBceU"
-            href="/"
+          <div
+            class="sc-gsTCUz cnJLNE"
           >
             Add Check
-          </a>
-        </div>
-        <div
-          class="sc-gsTCUz igmOJl"
+          </div>
+        </a>
+        <a
+          class="sc-dlfnbm bbHXWW"
+          disabled=""
+          href="/list-taken-times"
         >
-          <a
-            class="sc-dlfnbm dGBceU"
-            href="/list-taken-times"
+          <div
+            class="sc-gsTCUz cnJLNE"
           >
             Track.it
-          </a>
-        </div>
-        <div
-          class="sc-gsTCUz igmOJl"
+          </div>
+        </a>
+        <a
+          class="sc-dlfnbm bbHXWW"
+          disabled=""
+          href="/your-progress"
         >
-          <a
-            class="sc-dlfnbm dGBceU"
-            href="/your-progress"
+          <div
+            class="sc-gsTCUz cnJLNE"
           >
             Your Progress
-          </a>
-        </div>
-        <div
-          class="sc-gsTCUz igmOJl"
+          </div>
+        </a>
+        <a
+          class="sc-dlfnbm hIXonU"
+          href="/profile"
         >
-          <a
-            class="sc-dlfnbm dGBceU"
-            href="/profile"
+          <div
+            class="sc-gsTCUz cnJLNE"
           >
             More
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
       Test Page
     </div>
   </body>,
   "container": <div>
     <div
-      class="sc-bdfBwQ cUrnRJ"
+      class="sc-bdfBwQ eYpKlR"
     >
-      <div
-        class="sc-gsTCUz igmOJl"
+      <a
+        class="sc-dlfnbm hIXonU"
+        href="/"
       >
-        <a
-          class="sc-dlfnbm dGBceU"
-          href="/"
+        <div
+          class="sc-gsTCUz cnJLNE"
         >
           Add Check
-        </a>
-      </div>
-      <div
-        class="sc-gsTCUz igmOJl"
+        </div>
+      </a>
+      <a
+        class="sc-dlfnbm bbHXWW"
+        disabled=""
+        href="/list-taken-times"
       >
-        <a
-          class="sc-dlfnbm dGBceU"
-          href="/list-taken-times"
+        <div
+          class="sc-gsTCUz cnJLNE"
         >
           Track.it
-        </a>
-      </div>
-      <div
-        class="sc-gsTCUz igmOJl"
+        </div>
+      </a>
+      <a
+        class="sc-dlfnbm bbHXWW"
+        disabled=""
+        href="/your-progress"
       >
-        <a
-          class="sc-dlfnbm dGBceU"
-          href="/your-progress"
+        <div
+          class="sc-gsTCUz cnJLNE"
         >
           Your Progress
-        </a>
-      </div>
-      <div
-        class="sc-gsTCUz igmOJl"
+        </div>
+      </a>
+      <a
+        class="sc-dlfnbm hIXonU"
+        href="/profile"
       >
-        <a
-          class="sc-dlfnbm dGBceU"
-          href="/profile"
+        <div
+          class="sc-gsTCUz cnJLNE"
         >
           More
-        </a>
-      </div>
+        </div>
+      </a>
     </div>
     Test Page
   </div>,

@@ -6,34 +6,56 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-bdfBwQ dZUjVD"
+        class="sc-bdfBwQ bswUbU"
       >
-        1/1/1970, 2:00:10 AM
-        <div>
+        <div
+          class="sc-gsTCUz hMsXPk"
+        >
           Mock Piece Name
         </div>
+        <div
+          class="sc-dlfnbm lcoryn"
+        >
+          <div>
+            2:00:10 AM
+          </div>
+          <div>
+            Thu Jan 01 1970
+          </div>
+        </div>
         <button
-          class="sc-gsTCUz buNfjf"
+          class="sc-hKgILt grqJBm"
           type="button"
         >
-          Cancel
+          X
         </button>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="sc-bdfBwQ dZUjVD"
+      class="sc-bdfBwQ bswUbU"
     >
-      1/1/1970, 2:00:10 AM
-      <div>
+      <div
+        class="sc-gsTCUz hMsXPk"
+      >
         Mock Piece Name
       </div>
+      <div
+        class="sc-dlfnbm lcoryn"
+      >
+        <div>
+          2:00:10 AM
+        </div>
+        <div>
+          Thu Jan 01 1970
+        </div>
+      </div>
       <button
-        class="sc-gsTCUz buNfjf"
+        class="sc-hKgILt grqJBm"
         type="button"
       >
-        Cancel
+        X
       </button>
     </div>
   </div>,

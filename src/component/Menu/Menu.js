@@ -30,24 +30,24 @@ const Menu = ({ isTherePiece }) => (
 );
 
 const Main = styled.div`
-    background-color: ${color.secondColor};
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    position: fixed;
-    bottom: 0;
-    height: 15%;
-    width: 100%;
+  background-color: ${color.secondColor};
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: fixed;
+  bottom: 0;
+  height: 15%;
+  width: 100%;
 `;
 
 const OneLink = styled.div`
-margin: 2px;
-padding: 10px 0;
-width: 100%;
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
+  margin: 2px;
+  padding: 10px 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 `;
 
 const StyledLink = styled(NavLink)`

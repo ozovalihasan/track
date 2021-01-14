@@ -1,40 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ShortTrackedItem /> renders correctly 1`] = `
+exports[`<AppContainer /> renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="sc-bdfBwQ YWHfj"
-      >
-        <button
-          class="sc-dlfnbm iWHiuJ"
-        >
-          Mock Tracked Item Name
-        </button>
-        <button
-          class="sc-gsTCUz KTftB"
-        >
-          Delete
-        </button>
+      <div>
+        Mock App
+        isThereTrackedItem: true
+        isThereUser: true
       </div>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="sc-bdfBwQ YWHfj"
-    >
-      <button
-        class="sc-dlfnbm iWHiuJ"
-      >
-        Mock Tracked Item Name
-      </button>
-      <button
-        class="sc-gsTCUz KTftB"
-      >
-        Delete
-      </button>
+    <div>
+      Mock App
+      isThereTrackedItem: true
+      isThereUser: true
     </div>
   </div>,
   "debug": [Function],

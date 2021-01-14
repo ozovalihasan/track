@@ -57,10 +57,10 @@ jest.mock('../PieceForm', () => {
   return PieceForm;
 });
 
+const mockHistoryPush = jest.fn();
 jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
   useHistory: () => ({
-    push: jest.fn,
+    push: mockHistoryPush,
   }),
 }));
 
@@ -70,6 +70,11 @@ const initStore = {
       id: 1,
       name: 'Mock Tracked Item',
     }],
+    chosen: {
+      trackedItem: {
+        id: 1,
+      },
+    },
   },
 };
 
@@ -113,37 +118,38 @@ describe('<PieceFormContainer />', () => {
   it('triggers useEffect', () => {
     render(renderReadyComponent);
 
-    expect(setState).toHaveBeenCalledTimes(1);
-  });
-
-  it('triggers useEffect', () => {
-    render(renderReadyComponent);
-
     expect(store.dispatch).toHaveBeenCalledTimes(1);
   });
 
   it('triggers handleChange if name is changed', () => {
     render(renderReadyComponent);
 
+    expect(setState).toHaveBeenCalledTimes(0);
+
     userEvent.type(screen.getByPlaceholderText(/name/i), '1');
-    expect(setState).toHaveBeenCalledTimes(2);
+
+    expect(setState).toHaveBeenCalledTimes(1);
     expect(setState).toHaveBeenCalledWith('name1');
   });
 
   it('triggers handleChange if frequencyTime is changed', () => {
     render(renderReadyComponent);
 
+    expect(setState).toHaveBeenCalledTimes(0);
+
     userEvent.type(screen.getByPlaceholderText(/frequencyTime/i), '1');
-    expect(setState).toHaveBeenCalledTimes(2);
-    expect(setState).toHaveBeenCalledWith('frequencyTime864001');
+
+    expect(setState).toHaveBeenCalledTimes(1);
+    expect(setState).toHaveBeenCalledWith('frequencyTime1');
   });
 
-  it('triggers handleSubmit if submit is clicked', () => {
+  it('triggers handleSubmit and redirects to \'/\' if submit is clicked', () => {
     render(renderReadyComponent);
 
     expect(store.dispatch).toHaveBeenCalledTimes(1);
     userEvent.click(screen.getByText('Submit'));
     expect(store.dispatch).toHaveBeenCalledTimes(2);
+    expect(mockHistoryPush).toHaveBeenCalledWith('/');
   });
 
   it('renders correctly', () => {

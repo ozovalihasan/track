@@ -28,11 +28,11 @@ afterEach(() => {
 });
 
 describe('<CheckPiece />', () => {
-  it('triggers handleClickDelete when \'Cancel\' is clicked', () => {
+  it('triggers handleClickDelete when \'X\' is clicked', () => {
     render(renderReadyComponent);
 
-    expect(screen.getByText(/Cancel/i)).toBeInTheDocument();
-    userEvent.click(screen.getByText(/Cancel/i));
+    expect(screen.getByText(/X/i)).toBeInTheDocument();
+    userEvent.click(screen.getByText(/X/i));
     expect(handleClickDelete.mock.calls.length).toBe(1);
   });
 
@@ -43,7 +43,7 @@ describe('<CheckPiece />', () => {
       handleClickDelete={handleClickDelete}
     />);
 
-    expect(screen.getByText(/[+1]/i)).toBeInTheDocument();
+    expect(screen.getByText(/✔️/i)).toBeInTheDocument();
     expect(screen.getByText(/Piece Name/i)).toBeInTheDocument();
     userEvent.click(screen.getByText(/Piece Name/i));
     expect(handleClickCreate.mock.calls.length).toBe(1);

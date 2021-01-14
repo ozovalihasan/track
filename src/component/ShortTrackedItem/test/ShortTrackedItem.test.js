@@ -37,10 +37,10 @@ describe('<ShortTrackedItem />', () => {
     expect(handleClickChoose).toHaveBeenCalled();
   });
 
-  it('calls handleClickDeleteTrackedItem when \'Cancel\' is clicked', () => {
+  it('calls handleClickDeleteTrackedItem when \'Delete\' is clicked', () => {
     render(renderReadyComponent);
 
-    userEvent.click(screen.getByText(/Cancel/i));
+    userEvent.click(screen.getByText(/Delete/i));
     expect(handleClickDeleteTrackedItem).toHaveBeenCalled();
   });
 

@@ -24,32 +24,33 @@ const YourProgressContainer = () => {
 
   const takenTimes = useSelector(state => state.takenTime.list);
 
-  let filteredTakenTimes;
-  if (trackedItemId) {
-    filteredTakenTimes = takenTimes.filter(
-      takenTimes => takenTimes.tracked_item_id === trackedItemId,
-    );
-  } else {
-    filteredTakenTimes = takenTimes;
-  }
-
   const mappedPieces = filteredPieces.map(piece => {
-    const date = new Date();
+    const dateNow = Date.now();
+    const date = new Date(dateNow);
 
     const pieceCreateTime = new Date(piece.created_at);
 
     const intervalTime = setIntervalTime(date, piece.frequency_time)
-      .filter(interval => ((pieceCreateTime.getTime()) < interval[1]));
+      .filter(interval => ((pieceCreateTime.getTime()) < interval.end));
 
-    const pieceTakenTimes = filteredTakenTimes.filter(takenTime => takenTime.piece.id === piece.id);
+    const pieceTakenTimes = takenTimes.filter(takenTime => takenTime.piece.id === piece.id);
 
     const percentageTakenTimes = intervalTime.map(
-      interval => (pieceTakenTimes.filter(
-        takenTime => (
-          (interval[0] < takenTime.created_at * 1000)
-             && (takenTime.created_at * 1000 < interval[1])),
-      ).length / piece.frequency) * 100,
+      interval => (
+        (
+          pieceTakenTimes.filter(
+            takenTime => (
+              (
+                interval.start < takenTime.created_at * 1000
+              ) && (
+                takenTime.created_at * 1000 < interval.end
+              )
+            ),
+          ).length / piece.frequency
+        ) * 100
+      ),
     );
+
     return { ...piece, percentageTakenTimes };
   });
 

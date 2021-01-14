@@ -1,40 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ShortTrackedItem /> renders correctly 1`] = `
+exports[`<YourProgressContainer /> renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="sc-bdfBwQ YWHfj"
-      >
-        <button
-          class="sc-dlfnbm iWHiuJ"
-        >
-          Mock Tracked Item Name
-        </button>
-        <button
-          class="sc-gsTCUz KTftB"
-        >
-          Delete
-        </button>
+      <div>
+        Mock YourProgress
+        [{"id":1,"name":"First Mock Piece","tracked_item_id":1,"frequency":3,"created_at":946684800001,"frequency_time":604800,"percentageTakenTimes":[0,66.66666666666666]}]
       </div>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="sc-bdfBwQ YWHfj"
-    >
-      <button
-        class="sc-dlfnbm iWHiuJ"
-      >
-        Mock Tracked Item Name
-      </button>
-      <button
-        class="sc-gsTCUz KTftB"
-      >
-        Delete
-      </button>
+    <div>
+      Mock YourProgress
+      [{"id":1,"name":"First Mock Piece","tracked_item_id":1,"frequency":3,"created_at":946684800001,"frequency_time":604800,"percentageTakenTimes":[0,66.66666666666666]}]
     </div>
   </div>,
   "debug": [Function],

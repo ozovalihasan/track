@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // import styled from 'styled-components';
 
 const ToggleShowHide = ({
-  component, showList, handleClick, chosenTrackedItem,
+  childComponent, showList, handleClick, chosenTrackedItem,
 }) => (
   <div>
     <Main type="button" onClick={handleClick}>
@@ -13,13 +13,13 @@ const ToggleShowHide = ({
       {chosenTrackedItem || 'All'}
     </Main>
     <ComponentContainer>
-      {showList && (component)}
+      {showList && (childComponent)}
     </ComponentContainer>
   </div>
 );
 
 ToggleShowHide.propTypes = {
-  component: PropTypes.element.isRequired,
+  childComponent: PropTypes.element.isRequired,
   showList: PropTypes.bool.isRequired,
   handleClick: PropTypes.func.isRequired,
   chosenTrackedItem: PropTypes.string.isRequired,

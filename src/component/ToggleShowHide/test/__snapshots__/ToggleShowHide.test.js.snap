@@ -7,10 +7,12 @@ Object {
     <div>
       <div>
         <button
-          class="sc-bdfBwQ garxsF"
+          class="sc-bdfBwQ uXInL"
           type="button"
         >
-          Show
+          Don't Remember, Track
+           
+          Mock Tracked Item Name
         </button>
         <div
           class="sc-gsTCUz cDnEos"
@@ -21,10 +23,12 @@ Object {
   "container": <div>
     <div>
       <button
-        class="sc-bdfBwQ garxsF"
+        class="sc-bdfBwQ uXInL"
         type="button"
       >
-        Show
+        Don't Remember, Track
+         
+        Mock Tracked Item Name
       </button>
       <div
         class="sc-gsTCUz cDnEos"
@@ -85,17 +89,19 @@ Object {
 }
 `;
 
-exports[`<ToggleShowHide /> If showList is false renders correctly 2`] = `
+exports[`<ToggleShowHide /> If showList is true renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div>
         <button
-          class="sc-bdfBwQ garxsF"
+          class="sc-bdfBwQ uXInL"
           type="button"
         >
-          Show
+          Don't Remember, Track
+           
+          Mock Tracked Item Name
         </button>
         <div
           class="sc-gsTCUz cDnEos"
@@ -110,10 +116,12 @@ Object {
   "container": <div>
     <div>
       <button
-        class="sc-bdfBwQ garxsF"
+        class="sc-bdfBwQ uXInL"
         type="button"
       >
-        Show
+        Don't Remember, Track
+         
+        Mock Tracked Item Name
       </button>
       <div
         class="sc-gsTCUz cDnEos"

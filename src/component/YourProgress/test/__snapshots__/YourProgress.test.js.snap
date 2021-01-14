@@ -1,40 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ShortTrackedItem /> renders correctly 1`] = `
+exports[`<YourProgress /> renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="sc-bdfBwQ YWHfj"
+        class="sc-bdfBwQ jJHWpb"
       >
-        <button
-          class="sc-dlfnbm iWHiuJ"
+        <div
+          class="sc-gsTCUz eXfcGT"
         >
-          Mock Tracked Item Name
-        </button>
-        <button
-          class="sc-gsTCUz KTftB"
+          <div
+            class="sc-dlfnbm gotwPJ"
+          >
+            <div
+              class="sc-hKgILt gGwjiy"
+            >
+              First Mock Piece
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-gsTCUz eXfcGT"
         >
-          Delete
-        </button>
+          <div
+            class="sc-dlfnbm gotwPJ"
+          >
+            <div
+              class="sc-hKgILt gGwjiy"
+            >
+              Second Mock Piece
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="sc-bdfBwQ YWHfj"
+      class="sc-bdfBwQ jJHWpb"
     >
-      <button
-        class="sc-dlfnbm iWHiuJ"
+      <div
+        class="sc-gsTCUz eXfcGT"
       >
-        Mock Tracked Item Name
-      </button>
-      <button
-        class="sc-gsTCUz KTftB"
+        <div
+          class="sc-dlfnbm gotwPJ"
+        >
+          <div
+            class="sc-hKgILt gGwjiy"
+          >
+            First Mock Piece
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-gsTCUz eXfcGT"
       >
-        Delete
-      </button>
+        <div
+          class="sc-dlfnbm gotwPJ"
+        >
+          <div
+            class="sc-hKgILt gGwjiy"
+          >
+            Second Mock Piece
+          </div>
+        </div>
+      </div>
     </div>
   </div>,
   "debug": [Function],

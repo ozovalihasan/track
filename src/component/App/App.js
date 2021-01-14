@@ -3,20 +3,20 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import AddCheckContainer from '../AddCheck/AddCheckContainer';
+import ErrorContainer from '../Error/ErrorContainer';
 import ListTakenTimesContainer from '../ListTakenTimes/ListTakenTimesContainer';
 import ListTrackedItemsContainer from '../ListTrackedItems/ListTrackedItemsContainer';
+import LoadingContainer from '../Loading/LoadingContainer';
+import LogIn from '../LogIn/LogIn';
+import MenuContainer from '../Menu/MenuContainer';
 import PieceFormContainer from '../PieceForm/PieceFormContainer';
 import ProfileContainer from '../Profile/ProfileContainer';
 import ShortTakenTimeContainer from '../ShortTakenTime/ShortTakenTimeContainer';
+import SignUp from '../SignUp/SignUp';
 import ToggleShowHideContainer from '../ToggleShowHide/ToggleShowHideContainer';
 import YourProgressContainer from '../YourProgress/YourProgressContainer';
-import ErrorContainer from '../Error/ErrorContainer';
-import LoadingContainer from '../Loading/LoadingContainer';
-import LogIn from '../LogIn/LogIn';
-import SignUp from '../SignUp/SignUp';
-import MenuContainer from '../Menu/MenuContainer';
 
-const App = ({ isThereTrackedItem, isThereUser }) => (
+const App = ({ isThereUser, isThereTrackedItem }) => (
 
   <Main>
     <ErrorContainer />
@@ -25,7 +25,6 @@ const App = ({ isThereTrackedItem, isThereUser }) => (
       <>
         <Redirect to="/log-in" />
         <Switch>
-
           <Route exact path="/log-in" component={LogIn} />
           <Route exact path="/sign-up" component={SignUp} />
         </Switch>
@@ -44,9 +43,6 @@ const App = ({ isThereTrackedItem, isThereUser }) => (
 
       <Switch>
         <Route exact path="/" component={AddCheckContainer} />
-        <Route exact path="/one-piece-create" component={PieceFormContainer} />
-        <Route exact path="/your-progress" component={YourProgressContainer} />
-        <Route exact path="/profile" component={ProfileContainer} />
         <Route
           exact
           path="/list-taken-times"
@@ -56,6 +52,10 @@ const App = ({ isThereTrackedItem, isThereUser }) => (
             </ListTakenTimesContainer>
           )}
         />
+        <Route exact path="/your-progress" component={YourProgressContainer} />
+        <Route exact path="/profile" component={ProfileContainer} />
+        <Route exact path="/one-piece-create" component={PieceFormContainer} />
+
       </Switch>
       <MenuContainer />
     </>

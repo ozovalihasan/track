@@ -5,23 +5,18 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import ToggleShowHide from '../ToggleShowHide';
 
-const component = (<div>Mock Component</div>);
-const showList = false;
-let handleClick;
-let renderReadyComponent;
-
-beforeEach(() => {
-  handleClick = jest.fn();
-
-  renderReadyComponent = (
-    <ToggleShowHide
-      component={component}
-      showList={showList}
-      handleClick={handleClick}
-
-    />
-  );
-});
+const childComponent = (<div>Mock Component</div>);
+let showList = false;
+const handleClick = jest.fn();
+const chosenTrackedItem = 'Mock Tracked Item Name';
+const renderedComponent = showList => (
+  render(<ToggleShowHide
+    childComponent={childComponent}
+    showList={showList}
+    handleClick={handleClick}
+    chosenTrackedItem={chosenTrackedItem}
+  />)
+);
 
 afterEach(() => {
   handleClick.mockClear();
@@ -29,41 +24,39 @@ afterEach(() => {
 
 describe('<ToggleShowHide />', () => {
   it('calls handleClick when rendered trackedItem.name is clicked', () => {
-    render(renderReadyComponent);
+    renderedComponent(showList);
 
-    userEvent.click(screen.getByText(/Show/i));
+    userEvent.click(screen.getByText(/Mock Tracked Item Name/i));
     expect(handleClick).toHaveBeenCalled();
   });
 
   describe('If showList is false', () => {
-    it('doesn\'t render component', () => {
-      render(renderReadyComponent);
+    it('doesn\'t render child component', () => {
+      showList = false;
+      renderedComponent(showList);
 
       expect(screen.queryByText(/Mock Component/i)).not.toBeInTheDocument();
     });
 
     it('renders correctly', () => {
-      const renderedContainer = render(renderReadyComponent);
+      showList = false;
+      const renderedContainer = renderedComponent(showList);
       expect(renderedContainer).toMatchSnapshot();
     });
   });
 
-  describe('If showList is false', () => {
-    it('renders component if showList is true', () => {
-      render(<ToggleShowHide
-        component={component}
-        showList
-        handleClick={handleClick}
-      />);
+  describe('If showList is true', () => {
+    it('renders component', () => {
+      showList = true;
+      renderedComponent(showList);
 
       expect(screen.getByText(/Mock Component/i)).toBeInTheDocument();
     });
+
     it('renders correctly', () => {
-      const renderedContainer = render(<ToggleShowHide
-        component={component}
-        showList
-        handleClick={handleClick}
-      />);
+      showList = true;
+      const renderedContainer = renderedComponent(showList);
+
       expect(renderedContainer).toMatchSnapshot();
     });
   });

@@ -19,19 +19,19 @@ Object {
           name="frequency"
           placeholder="frequency"
           type="text"
-          value="0"
+          value=""
         />
         <input
           name="frequencyTime"
           placeholder="frequencyTime"
           type="text"
-          value="frequencyTime86400"
+          value="frequencyTime"
         />
         <input
           name="trackedItemId"
           placeholder="trackedItemId"
           type="text"
-          value="trackedItemId"
+          value="trackedItemId1"
         />
         <button
           type="submit"
@@ -56,19 +56,19 @@ Object {
         name="frequency"
         placeholder="frequency"
         type="text"
-        value="0"
+        value=""
       />
       <input
         name="frequencyTime"
         placeholder="frequencyTime"
         type="text"
-        value="frequencyTime86400"
+        value="frequencyTime"
       />
       <input
         name="trackedItemId"
         placeholder="trackedItemId"
         type="text"
-        value="trackedItemId"
+        value="trackedItemId1"
       />
       <button
         type="submit"
