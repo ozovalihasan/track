@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Button from '../Button/Button';
+import Input from '../Input/Input';
 import ShortTrackedItemContainer from '../ShortTrackedItem/ShortTrackedItemContainer';
 import * as color from '../styleVariables';
 
@@ -13,7 +15,7 @@ const ListTrackedItems = ({
   <Main trackedItems={trackedItems}>
     <TrackedItem>
       <CreateContainer>
-        <CreateInput type="text" value={name} onChange={handleChange} placeholder="Tracked Item Name" />
+        <Input type="text" value={name} onChange={handleChange} placeholder="Tracked Item Name" />
         <CreateButton onClick={handleClickCreateTrackedItem}>
           Create
         </CreateButton>
@@ -55,13 +57,6 @@ ${
 }
 `;
 
-const CreateInput = styled.input`
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid ${color.seventhColor};
-  margin: 10px 0;
-`;
-
 const CreateContainer = styled.div`
   height: 100%;
   padding: 10px;
@@ -71,19 +66,12 @@ const CreateContainer = styled.div`
   justify-content: center;
 `;
 
-const CreateButton = styled.button`
+const CreateButton = styled(Button)`
   width: 100%;
-  background-color: ${color.firstColor};
-  color: white;
-  padding: 20px;
-
 `;
 
-const ShowButton = styled.button`
-  padding: 20px;
+const ShowButton = styled(Button)`
   margin: 10px;
-  background-color: ${color.firstColor};
-  color: white;
 `;
 
 const TrackedItem = styled.div`

@@ -25,10 +25,6 @@ const Main = styled.div`
   width: 30vw;
   color: yellow;
   margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: relative;
 
   @media (min-width: 768px) {

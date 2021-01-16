@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import * as color from '../styleVariables';
+import Button from '../Button/Button';
 
 const Profile = ({ handleClick, user }) => (
   <>
@@ -13,9 +14,9 @@ const Profile = ({ handleClick, user }) => (
             {' '}
             {user.username}
           </User>
-          <Logout type="button" onClick={handleClick}>
+          <Button type="button" onClick={handleClick}>
             Logout
-          </Logout>
+          </Button>
         </UserContainer>
       ) : (
         <Main>
@@ -53,12 +54,6 @@ const Main = styled.div`
 const User = styled.div`
   padding: 30px;
   border-radius: 5px;
-`;
-
-const Logout = styled.button`
-  background-color: ${color.firstColor};
-  color: ${color.fifthColor};
-  padding: 20px;
 `;
 
 const StyledLink = styled(Link)`

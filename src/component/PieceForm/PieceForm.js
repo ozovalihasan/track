@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import * as color from '../styleVariables';
+import Button from '../Button/Button';
+import Input from '../Input/Input';
 
 const PieceForm = ({
   frequencyTimeList,
@@ -66,13 +68,6 @@ const Form = styled.form`
   justify-content: center;
 `;
 
-const Input = styled.input`
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid ${color.seventhColor};
-  margin: 10px 0;
-`;
-
 const Select = styled.select`
   padding: 10px;
   outline: none;
@@ -83,10 +78,7 @@ const Select = styled.select`
   background-color: white;
 `;
 
-const CreateButton = styled.button`
-  background-color: ${color.firstColor};
-  padding: 20px;
-  color: ${color.fifthColor};
+const CreateButton = styled(Button)`
   width: 100%;
 `;
 

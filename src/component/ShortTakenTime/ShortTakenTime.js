@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import * as color from '../styleVariables';
+import Button from '../Button/Button';
 
 const ShortTakenTime = ({
   takenTime, handleClick,
@@ -31,7 +32,6 @@ const Main = styled.div`
   width: 100%;
   grid-template-columns: 2fr 3fr 1fr; 
   align-items: center;
-  // justify-content: center;
   text-align: center;
   margin: 3px 0;
   padding: 0 10px;
@@ -52,16 +52,14 @@ const CheckTime = styled.div`
   
 `;
 
-const Destroy = styled.button`
+const Destroy = styled(Button)`
   margin:20px;
   width: 30px;
   height: 30px;
-  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: white;
   background-color: ${color.fourthColor}; 
 `;
 ShortTakenTime.propTypes = {

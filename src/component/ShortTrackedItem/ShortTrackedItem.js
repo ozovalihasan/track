@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Button from '../Button/Button';
 import * as color from '../styleVariables';
 
 const ShortTrackedItem = ({
@@ -23,21 +24,14 @@ const TrackedItemContainer = styled.div`
   grid-template-rows: 4fr 1fr;
 `;
 
-const DeleteButton = styled.button`
+const DeleteButton = styled(Button)`
   background-color: ${color.fourthColor};
   margin: 5px;
-  color: white;
 `;
 
-const ChooseButton = styled.button`
-  background-color: ${color.firstColor};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+const ChooseButton = styled(Button)`
   min-width: 200px;
   margin: 5px;
-  color: white;
 `;
 
 ShortTrackedItem.propTypes = {

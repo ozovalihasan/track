@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import styled from 'styled-components';
+import Button from '../Button/Button';
 
 const ToggleShowHide = ({
   childComponent, showList, handleClick, chosenTrackedItem,
@@ -25,7 +25,7 @@ ToggleShowHide.propTypes = {
   chosenTrackedItem: PropTypes.string.isRequired,
 };
 
-const Main = styled.button`
+const Main = styled(Button)`
 width: 100%;
 height: 100%;
 `;

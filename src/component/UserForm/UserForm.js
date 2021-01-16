@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Button from '../Button/Button';
+import Input from '../Input/Input';
 import ProfileContainer from '../Profile/ProfileContainer';
-import * as color from '../styleVariables';
 
 const UserForm = ({
   handleChange,
@@ -16,14 +17,14 @@ const UserForm = ({
     </div>
     <FormContainer>
       <Form onSubmit={handleSubmit}>
-        <FormInput
+        <Input
           onChange={handleChange}
           type="text"
           name="username"
           value={username}
           placeholder="Username"
         />
-        <FormInput
+        <Input
           onChange={handleChange}
           type="password"
           name="password"
@@ -50,13 +51,6 @@ const Main = styled.div`
   height: 100vh;
 `;
 
-const FormInput = styled.input`
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid ${color.seventhColor};
-  margin: 10px 0;
-`;
-
 const FormContainer = styled.div`
   width: 100%;
   display: flex;
@@ -76,10 +70,7 @@ const Form = styled.form`
 
 `;
 
-const SubmitButton = styled.button`
-  background-color: ${color.firstColor};
-  padding: 20px;
-  color: ${color.fifthColor};
+const SubmitButton = styled(Button)`
   margin: 40px 10px;
   width: 100%;
 `;
