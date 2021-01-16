@@ -1,7 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 import { axiosBlock } from '../api/apiReducer';
-// import axios from 'axios';
 
 const pieceSlice = createSlice({
   name: 'piece',
