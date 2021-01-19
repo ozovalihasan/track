@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
