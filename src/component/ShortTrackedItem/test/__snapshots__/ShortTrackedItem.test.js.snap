@@ -6,15 +6,15 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-bdfBwQ YWHfj"
+        class="sc-gsTCUz jDVDLb"
       >
         <button
-          class="sc-dlfnbm iWHiuJ"
+          class="sc-bdfBwQ sc-hKgILt bJWWGO bWphBT"
         >
           Mock Tracked Item Name
         </button>
         <button
-          class="sc-gsTCUz KTftB"
+          class="sc-bdfBwQ sc-dlfnbm bJWWGO dMIUDr"
         >
           Delete
         </button>
@@ -23,15 +23,15 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="sc-bdfBwQ YWHfj"
+      class="sc-gsTCUz jDVDLb"
     >
       <button
-        class="sc-dlfnbm iWHiuJ"
+        class="sc-bdfBwQ sc-hKgILt bJWWGO bWphBT"
       >
         Mock Tracked Item Name
       </button>
       <button
-        class="sc-gsTCUz KTftB"
+        class="sc-bdfBwQ sc-dlfnbm bJWWGO dMIUDr"
       >
         Delete
       </button>

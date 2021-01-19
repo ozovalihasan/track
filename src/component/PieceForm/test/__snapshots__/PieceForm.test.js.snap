@@ -6,16 +6,16 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-bdfBwQ fIFvMB"
+        class="sc-dlfnbm kTXsqi"
       >
         <form
-          class="sc-gsTCUz eBuwWb"
+          class="sc-hKgILt enRJHu"
         >
           <p>
             Add a piece to your tracked item
           </p>
           <input
-            class="sc-dlfnbm hBgaUY"
+            class="sc-gsTCUz bdVBCP"
             name="name"
             placeholder="Name"
             required=""
@@ -23,7 +23,7 @@ Object {
             value="mock name"
           />
           <select
-            class="sc-hKgILt kjkmOC"
+            class="sc-eCssSg fupXUt"
             name="trackedItemId"
             required=""
           >
@@ -44,7 +44,7 @@ Object {
             </option>
           </select>
           <select
-            class="sc-hKgILt kjkmOC"
+            class="sc-eCssSg fupXUt"
             name="frequencyTime"
             required=""
           >
@@ -65,7 +65,7 @@ Object {
             </option>
           </select>
           <input
-            class="sc-dlfnbm hBgaUY"
+            class="sc-gsTCUz bdVBCP"
             min="1"
             name="frequency"
             placeholder="How many times?"
@@ -74,7 +74,7 @@ Object {
             value="0"
           />
           <button
-            class="sc-eCssSg gptWSS"
+            class="sc-bdfBwQ sc-jSgupP bJWWGO knAXbc"
             type="submit"
           >
              Create Piece
@@ -85,16 +85,16 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="sc-bdfBwQ fIFvMB"
+      class="sc-dlfnbm kTXsqi"
     >
       <form
-        class="sc-gsTCUz eBuwWb"
+        class="sc-hKgILt enRJHu"
       >
         <p>
           Add a piece to your tracked item
         </p>
         <input
-          class="sc-dlfnbm hBgaUY"
+          class="sc-gsTCUz bdVBCP"
           name="name"
           placeholder="Name"
           required=""
@@ -102,7 +102,7 @@ Object {
           value="mock name"
         />
         <select
-          class="sc-hKgILt kjkmOC"
+          class="sc-eCssSg fupXUt"
           name="trackedItemId"
           required=""
         >
@@ -123,7 +123,7 @@ Object {
           </option>
         </select>
         <select
-          class="sc-hKgILt kjkmOC"
+          class="sc-eCssSg fupXUt"
           name="frequencyTime"
           required=""
         >
@@ -144,7 +144,7 @@ Object {
           </option>
         </select>
         <input
-          class="sc-dlfnbm hBgaUY"
+          class="sc-gsTCUz bdVBCP"
           min="1"
           name="frequency"
           placeholder="How many times?"
@@ -153,7 +153,7 @@ Object {
           value="0"
         />
         <button
-          class="sc-eCssSg gptWSS"
+          class="sc-bdfBwQ sc-jSgupP bJWWGO knAXbc"
           type="submit"
         >
            Create Piece

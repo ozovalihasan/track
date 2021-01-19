@@ -7,7 +7,7 @@ Object {
     <div>
       <div>
         <button
-          class="sc-bdfBwQ uXInL"
+          class="sc-bdfBwQ sc-gsTCUz bJWWGO hJQbNL"
           type="button"
         >
           Don't Remember, Track
@@ -15,7 +15,7 @@ Object {
           Mock Tracked Item Name
         </button>
         <div
-          class="sc-gsTCUz cDnEos"
+          class="sc-dlfnbm hFbvsr"
         />
       </div>
     </div>
@@ -23,7 +23,7 @@ Object {
   "container": <div>
     <div>
       <button
-        class="sc-bdfBwQ uXInL"
+        class="sc-bdfBwQ sc-gsTCUz bJWWGO hJQbNL"
         type="button"
       >
         Don't Remember, Track
@@ -31,7 +31,7 @@ Object {
         Mock Tracked Item Name
       </button>
       <div
-        class="sc-gsTCUz cDnEos"
+        class="sc-dlfnbm hFbvsr"
       />
     </div>
   </div>,
@@ -96,7 +96,7 @@ Object {
     <div>
       <div>
         <button
-          class="sc-bdfBwQ uXInL"
+          class="sc-bdfBwQ sc-gsTCUz bJWWGO hJQbNL"
           type="button"
         >
           Don't Remember, Track
@@ -104,7 +104,7 @@ Object {
           Mock Tracked Item Name
         </button>
         <div
-          class="sc-gsTCUz cDnEos"
+          class="sc-dlfnbm hFbvsr"
         >
           <div>
             Mock Component
@@ -116,7 +116,7 @@ Object {
   "container": <div>
     <div>
       <button
-        class="sc-bdfBwQ uXInL"
+        class="sc-bdfBwQ sc-gsTCUz bJWWGO hJQbNL"
         type="button"
       >
         Don't Remember, Track
@@ -124,7 +124,7 @@ Object {
         Mock Tracked Item Name
       </button>
       <div
-        class="sc-gsTCUz cDnEos"
+        class="sc-dlfnbm hFbvsr"
       >
         <div>
           Mock Component

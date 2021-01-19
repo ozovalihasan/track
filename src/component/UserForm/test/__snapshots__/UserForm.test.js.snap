@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-bdfBwQ iCancN"
+        class="sc-dlfnbm gPkCDW"
       >
         <div>
           <div>
@@ -14,27 +14,27 @@ Object {
           </div>
         </div>
         <div
-          class="sc-dlfnbm bMORNo"
+          class="sc-hKgILt hcMAWq"
         >
           <form
-            class="sc-hKgILt klxLsr"
+            class="sc-eCssSg CJEpc"
           >
             <input
-              class="sc-gsTCUz ezFpSP"
+              class="sc-gsTCUz bdVBCP"
               name="username"
               placeholder="Username"
               type="text"
               value="Mock Username"
             />
             <input
-              class="sc-gsTCUz ezFpSP"
+              class="sc-gsTCUz bdVBCP"
               name="password"
               placeholder="Password"
               type="password"
               value="Mock Password"
             />
             <button
-              class="sc-eCssSg cfYtMe"
+              class="sc-bdfBwQ sc-jSgupP bJWWGO dWQiwE"
               type="submit"
             >
               Mock Button Name
@@ -46,7 +46,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="sc-bdfBwQ iCancN"
+      class="sc-dlfnbm gPkCDW"
     >
       <div>
         <div>
@@ -54,27 +54,27 @@ Object {
         </div>
       </div>
       <div
-        class="sc-dlfnbm bMORNo"
+        class="sc-hKgILt hcMAWq"
       >
         <form
-          class="sc-hKgILt klxLsr"
+          class="sc-eCssSg CJEpc"
         >
           <input
-            class="sc-gsTCUz ezFpSP"
+            class="sc-gsTCUz bdVBCP"
             name="username"
             placeholder="Username"
             type="text"
             value="Mock Username"
           />
           <input
-            class="sc-gsTCUz ezFpSP"
+            class="sc-gsTCUz bdVBCP"
             name="password"
             placeholder="Password"
             type="password"
             value="Mock Password"
           />
           <button
-            class="sc-eCssSg cfYtMe"
+            class="sc-bdfBwQ sc-jSgupP bJWWGO dWQiwE"
             type="submit"
           >
             Mock Button Name

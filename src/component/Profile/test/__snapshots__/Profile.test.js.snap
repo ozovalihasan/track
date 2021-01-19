@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-gsTCUz eoCqTR"
+        class="sc-dlfnbm jpPXoK"
       >
         <a
           class="sc-eCssSg mIEpj"
@@ -26,7 +26,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="sc-gsTCUz eoCqTR"
+      class="sc-dlfnbm jpPXoK"
     >
       <a
         class="sc-eCssSg mIEpj"
@@ -103,17 +103,17 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-bdfBwQ wxBhl"
+        class="sc-gsTCUz gEVsZZ"
       >
         <div
-          class="sc-dlfnbm fcpbLr"
+          class="sc-hKgILt cBDurl"
         >
           Hi
            
           Mock Username
         </div>
         <button
-          class="sc-hKgILt iMTQQA"
+          class="sc-bdfBwQ bJWWGO"
           type="button"
         >
           Logout
@@ -124,17 +124,17 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="sc-bdfBwQ wxBhl"
+      class="sc-gsTCUz gEVsZZ"
     >
       <div
-        class="sc-dlfnbm fcpbLr"
+        class="sc-hKgILt cBDurl"
       >
         Hi
          
         Mock Username
       </div>
       <button
-        class="sc-hKgILt iMTQQA"
+        class="sc-bdfBwQ bJWWGO"
         type="button"
       >
         Logout

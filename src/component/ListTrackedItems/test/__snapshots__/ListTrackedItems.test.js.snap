@@ -6,22 +6,22 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-bdfBwQ gAAsmt"
+        class="sc-dlfnbm ktzDkq"
       >
         <div
-          class="sc-jSgupP iWgfdg"
+          class="sc-gKsewC jysElB"
         >
           <div
-            class="sc-dlfnbm fyHgzS"
+            class="sc-hKgILt hcPnLM"
           >
             <input
-              class="sc-gsTCUz ezFpSP"
+              class="sc-gsTCUz bdVBCP"
               placeholder="Tracked Item Name"
               type="text"
               value="new tracked item"
             />
             <button
-              class="sc-hKgILt ewdNpj"
+              class="sc-bdfBwQ sc-eCssSg bJWWGO jvctCF"
             >
               Create
             </button>
@@ -32,22 +32,22 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="sc-bdfBwQ gAAsmt"
+      class="sc-dlfnbm ktzDkq"
     >
       <div
-        class="sc-jSgupP iWgfdg"
+        class="sc-gKsewC jysElB"
       >
         <div
-          class="sc-dlfnbm fyHgzS"
+          class="sc-hKgILt hcPnLM"
         >
           <input
-            class="sc-gsTCUz ezFpSP"
+            class="sc-gsTCUz bdVBCP"
             placeholder="Tracked Item Name"
             type="text"
             value="new tracked item"
           />
           <button
-            class="sc-hKgILt ewdNpj"
+            class="sc-bdfBwQ sc-eCssSg bJWWGO jvctCF"
           >
             Create
           </button>

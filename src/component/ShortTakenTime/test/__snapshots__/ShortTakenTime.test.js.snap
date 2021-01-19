@@ -6,15 +6,15 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-bdfBwQ bswUbU"
+        class="sc-gsTCUz jVciYy"
       >
         <div
-          class="sc-gsTCUz hMsXPk"
+          class="sc-dlfnbm gZCgyT"
         >
           Mock Piece Name
         </div>
         <div
-          class="sc-dlfnbm lcoryn"
+          class="sc-hKgILt bnskYF"
         >
           <div>
             2:00:10 AM
@@ -24,7 +24,7 @@ Object {
           </div>
         </div>
         <button
-          class="sc-hKgILt grqJBm"
+          class="sc-bdfBwQ sc-eCssSg bJWWGO bmQKcw"
           type="button"
         >
           X
@@ -34,15 +34,15 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="sc-bdfBwQ bswUbU"
+      class="sc-gsTCUz jVciYy"
     >
       <div
-        class="sc-gsTCUz hMsXPk"
+        class="sc-dlfnbm gZCgyT"
       >
         Mock Piece Name
       </div>
       <div
-        class="sc-dlfnbm lcoryn"
+        class="sc-hKgILt bnskYF"
       >
         <div>
           2:00:10 AM
@@ -52,7 +52,7 @@ Object {
         </div>
       </div>
       <button
-        class="sc-hKgILt grqJBm"
+        class="sc-bdfBwQ sc-eCssSg bJWWGO bmQKcw"
         type="button"
       >
         X
