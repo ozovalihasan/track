@@ -37,7 +37,7 @@ afterEach(() => {
 });
 
 describe('<UserForm />', () => {
-  it('call handleSubmit when the form is submitted', () => {
+  it('Mock ProfileContainer is present in DOM', () => {
     renderedComponent();
 
     expect(screen.getByText(/Mock ProfileContainer/i)).toBeInTheDocument();
