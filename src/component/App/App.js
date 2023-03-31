@@ -18,7 +18,7 @@ import YourProgressContainer from '../YourProgress/YourProgressContainer';
 
 const App = ({ isThereUser, isThereTrackedItem }) => (
 
-  <Main>
+  <div>
     <ErrorContainer />
     <LoadingContainer />
     {isThereUser || (
@@ -36,38 +36,40 @@ const App = ({ isThereUser, isThereTrackedItem }) => (
     {isThereTrackedItem && isThereUser && (
     <>
       <Redirect to="/" />
+      <Main>
 
-      <ToggleShowHideContainer>
-        <ListTrackedItemsContainer />
-      </ToggleShowHideContainer>
+        <ToggleShowHideContainer>
+          <ListTrackedItemsContainer />
+        </ToggleShowHideContainer>
 
-      <Switch>
-        <Route exact path="/" component={AddCheckContainer} />
-        <Route
-          exact
-          path="/list-taken-times"
-          render={() => (
-            <ListTakenTimesContainer>
-              <ShortTakenTimeContainer />
-            </ListTakenTimesContainer>
-          )}
-        />
-        <Route exact path="/your-progress" component={YourProgressContainer} />
-        <Route exact path="/profile" component={ProfileContainer} />
-        <Route exact path="/one-piece-create" component={PieceFormContainer} />
+        <Switch>
+          <Route exact path="/" component={AddCheckContainer} />
+          <Route
+            exact
+            path="/list-taken-times"
+            render={() => (
+              <ListTakenTimesContainer>
+                <ShortTakenTimeContainer />
+              </ListTakenTimesContainer>
+            )}
+          />
+          <Route exact path="/your-progress" component={YourProgressContainer} />
+          <Route exact path="/profile" component={ProfileContainer} />
+          <Route exact path="/one-piece-create" component={PieceFormContainer} />
 
-      </Switch>
+        </Switch>
+      </Main>
       <MenuContainer />
     </>
     )}
-  </Main>
+  </div>
 
 );
 
 const Main = styled.div`
-display: grid;
-height: 100vh;
-grid-template-rows: 10% 75%;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 10% 75%;
 `;
 
 App.propTypes = {

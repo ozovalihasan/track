@@ -5,10 +5,17 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
-        Log In
-        fetchUserLogin
-        Mock UserFormContainer
+      <div
+        class="sc-bdfBwQ bIQWAJ"
+      >
+        <div>
+          Log In
+          fetchUserLogin
+          Mock UserFormContainer
+        </div>
+        <div>
+          Mock LogInAsGuestButtonContainer 
+        </div>
       </div>
       <div>
         Second Page
@@ -16,10 +23,17 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div>
-      Log In
-      fetchUserLogin
-      Mock UserFormContainer
+    <div
+      class="sc-bdfBwQ bIQWAJ"
+    >
+      <div>
+        Log In
+        fetchUserLogin
+        Mock UserFormContainer
+      </div>
+      <div>
+        Mock LogInAsGuestButtonContainer 
+      </div>
     </div>
     <div>
       Second Page

@@ -1,87 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<UserForm /> renders correctly 1`] = `
+exports[`<LogInAsGuestButtonContainer /> renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="sc-dlfnbm hoyLud"
-      >
-        <div>
-          <div>
-            Mock ProfileContainer 
-          </div>
-        </div>
-        <div
-          class="sc-hKgILt hcMAWq"
+      Mock LogInAsGuestButton
+      <form>
+        <button
+          type="submit"
         >
-          <form
-            class="sc-eCssSg CJEpc"
-          >
-            <input
-              class="sc-gsTCUz bdVBCP"
-              name="username"
-              placeholder="Username"
-              type="text"
-              value="Mock Username"
-            />
-            <input
-              class="sc-gsTCUz bdVBCP"
-              name="password"
-              placeholder="Password"
-              type="password"
-              value="Mock Password"
-            />
-            <button
-              class="sc-bdfBwQ sc-jSgupP bJWWGO dWQiwE"
-              type="submit"
-            >
-              Mock Button Name
-            </button>
-          </form>
-        </div>
-      </div>
+          Submit
+        </button>
+      </form>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="sc-dlfnbm hoyLud"
-    >
-      <div>
-        <div>
-          Mock ProfileContainer 
-        </div>
-      </div>
-      <div
-        class="sc-hKgILt hcMAWq"
+    Mock LogInAsGuestButton
+    <form>
+      <button
+        type="submit"
       >
-        <form
-          class="sc-eCssSg CJEpc"
-        >
-          <input
-            class="sc-gsTCUz bdVBCP"
-            name="username"
-            placeholder="Username"
-            type="text"
-            value="Mock Username"
-          />
-          <input
-            class="sc-gsTCUz bdVBCP"
-            name="password"
-            placeholder="Password"
-            type="password"
-            value="Mock Password"
-          />
-          <button
-            class="sc-bdfBwQ sc-jSgupP bJWWGO dWQiwE"
-            type="submit"
-          >
-            Mock Button Name
-          </button>
-        </form>
-      </div>
-    </div>
+        Submit
+      </button>
+    </form>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

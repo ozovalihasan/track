@@ -18,14 +18,14 @@ const UserForm = ({
     <FormContainer>
       <Form onSubmit={handleSubmit}>
         <Input
-          onChange={handleChange}
+          onChange={e => handleChange(e, 'password')}
           type="text"
           name="username"
           value={username}
           placeholder="Username"
         />
         <Input
-          onChange={handleChange}
+          onChange={e => handleChange(e, 'password')}
           type="password"
           name="password"
           value={password}
@@ -46,9 +46,7 @@ UserForm.propTypes = {
 };
 
 const Main = styled.div`
-  display: grid;
-  grid-template-rows: 1fr 3fr 1fr;
-  height: 100vh;
+  display: block;
 `;
 
 const FormContainer = styled.div`

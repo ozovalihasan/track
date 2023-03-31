@@ -5,20 +5,22 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="sc-bdfBwQ dLOzuB"
-      >
+      <div>
         <div>
           Mock ErrorContainer 
         </div>
         <div>
           Mock LoadingContainer 
         </div>
-        <div>
-          Mock ToggleShowHideContainer
-        </div>
-        <div>
-          Mock AddCheckContainer 
+        <div
+          class="sc-bdfBwQ eSkTZp"
+        >
+          <div>
+            Mock ToggleShowHideContainer
+          </div>
+          <div>
+            Mock AddCheckContainer 
+          </div>
         </div>
         <div>
           Mock MenuContainer 
@@ -27,20 +29,22 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div
-      class="sc-bdfBwQ dLOzuB"
-    >
+    <div>
       <div>
         Mock ErrorContainer 
       </div>
       <div>
         Mock LoadingContainer 
       </div>
-      <div>
-        Mock ToggleShowHideContainer
-      </div>
-      <div>
-        Mock AddCheckContainer 
+      <div
+        class="sc-bdfBwQ eSkTZp"
+      >
+        <div>
+          Mock ToggleShowHideContainer
+        </div>
+        <div>
+          Mock AddCheckContainer 
+        </div>
       </div>
       <div>
         Mock MenuContainer 
@@ -106,9 +110,7 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="sc-bdfBwQ dLOzuB"
-      >
+      <div>
         <div>
           Mock ErrorContainer 
         </div>
@@ -122,9 +124,7 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div
-      class="sc-bdfBwQ dLOzuB"
-    >
+    <div>
       <div>
         Mock ErrorContainer 
       </div>
@@ -195,9 +195,7 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="sc-bdfBwQ dLOzuB"
-      >
+      <div>
         <div>
           Mock ErrorContainer 
         </div>
@@ -211,9 +209,7 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div
-      class="sc-bdfBwQ dLOzuB"
-    >
+    <div>
       <div>
         Mock ErrorContainer 
       </div>

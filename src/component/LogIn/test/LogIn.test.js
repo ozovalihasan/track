@@ -27,6 +27,13 @@ jest.mock('../../UserForm/UserFormContainer', () => {
   return UserFormContainer;
 });
 
+jest.mock('../../LogInAsGuestButton/LogInAsGuestButtonContainer', () => {
+  const LogInAsGuestButtonContainer = () => (<div>Mock LogInAsGuestButtonContainer </div>);
+  LogInAsGuestButtonContainer.displayName = 'LogInAsGuestButtonContainer';
+  return LogInAsGuestButtonContainer;
+});
+
+
 const initStore = { user: { } };
 const mockStore = configureStore();
 const store = mockStore(initStore);
@@ -70,6 +77,7 @@ describe('<LogIn />', () => {
       render(renderReadyComponent);
 
       expect(screen.getByText(/Mock UserFormContainer/i)).toBeInTheDocument();
+      expect(screen.getByText(/Mock LogInAsGuestButtonContainer/i)).toBeInTheDocument();
       expect(screen.getByText(/Second Page/i)).toBeInTheDocument();
       expect(screen.getByText(/Log In/i)).toBeInTheDocument();
       expect(screen.getByText(/fetchUserLogin/i)).toBeInTheDocument();
