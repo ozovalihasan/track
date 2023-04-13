@@ -13,7 +13,7 @@ The app is using an [API](https://github.com/ozovalihasan/track-api).
 ![screenshot](./public/dr-ti.gif)
 
 ## Live Demo
-Please check [live demo of the project.](https://dr-ti.ozovalihasan.com/)
+Please check [live demo of the project.](https://ozovalihasan.com/dr-ti)
 
 ## Built With
 
