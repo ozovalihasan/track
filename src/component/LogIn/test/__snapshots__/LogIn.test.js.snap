@@ -9,7 +9,7 @@ Object {
         class="sc-bdfBwQ bIQWAJ"
       >
         <div>
-          Log In
+          Log in
           fetchUserLogin
           Mock UserFormContainer
         </div>
@@ -27,7 +27,7 @@ Object {
       class="sc-bdfBwQ bIQWAJ"
     >
       <div>
-        Log In
+        Log in
         fetchUserLogin
         Mock UserFormContainer
       </div>

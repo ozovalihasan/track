@@ -20,7 +20,7 @@ const Profile = ({ handleClick, user }) => (
         </UserContainer>
       ) : (
         <Main>
-          <StyledLink to="/log-in">Login</StyledLink>
+          <StyledLink to="/log-in">Log in</StyledLink>
           <StyledLink to="/sign-up">Sign up</StyledLink>
         </Main>
       )

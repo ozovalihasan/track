@@ -57,7 +57,7 @@ describe('<Profile />', () => {
     it('redirects \'/log-in\' when \'Login\' is clicked', () => {
       user.username = '';
       render(renderReadyComponent);
-      userEvent.click(screen.getByText(/Login/i));
+      userEvent.click(screen.getByText(/Log in/i));
 
       expect(screen.getByText(/Log In Page/i)).toBeInTheDocument();
     });
